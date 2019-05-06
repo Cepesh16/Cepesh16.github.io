@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	
+	<title>Газета</title>
+</head>
+<body>
+	<!-- ДИАЛОГОВОЕ ОКНО МЕНЮ-->
+	<div class="modal" id="menuModal">
+		<div class="modal-dialog">
+			<div class="modal-content border-0">
+				<div class="modal-header border-bottom-0">
+					<!-- <h5 class="modal-title">Title of the modal</h5> -->
+					<button type="button" class="close" data-dismiss="modal">
+						<span class="display-3">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<ul class="list-group list-group-flush mb-5">
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Новости</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Публикации</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Колонки</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Интервью</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Графика</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Фото и відео</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Блоги</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Архив</a></li>
+					</ul>
+					
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item text-uppercase border-top-0"><a href="">Украинская правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Економическая правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Жизнь</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Европейская правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Блоги</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Историческая правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">ТаблоID</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Форум</a></li>
+					</ul>
+				</div>
+				<!-- <div class="modal-footer"></div> -->
+			</div>
+		</div>
+	</div>
+	<!-- ДИАЛОГОВОЕ ОКНО ПОИСКА -->
+	<div class="modal" id="searchModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header border-bottom-0">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<h1 class="text-center text-uppercase font-weight-normal mb-5">Поиск по сайту</h1>
+					<form class="form-inline justify-content-between">
+						<div class="form-group w-75 mb-2">
+							<input type="search" class="form-control w-100 border" id="inputSearch" placeholder="Что вы ищете?">
+						</div>
+						<button type="button" class="btn btn-secondary mb-2">Найти</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- НАВИГАЦИЯ -->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light py-0 border-bottom">
+			<div class="collapse navbar-collapse justify-content-center">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" href="#">ПОЛИТИКА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ЭКОНОМИКА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ЖИЗНЬ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ЕВРОПА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ФОРУМ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">БЛОГИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ИСТОРИЧЕСКАЯ ПРАВДА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ТАБОЛID</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ДОСТУП</a></li>
+					<li class="nav-item"><a class="nav-link text-red" href="#">ВЫБОРЫ - 2019</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row py-4 justify-content-between text-center">
+				
+				<div class="d-lg-none align-self-center ml-3 ml-sm-0">
+					  <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#menuModal">Меню</button>
+				</div>
+
+				<div class="d-none d-lg-block align-self-center">
+					<a class="btn btn-outline-secondary" href="#">FB</a>
+					<a class="btn btn-outline-secondary" href="#">TW</a>
+					<a class="btn btn-outline-secondary" href="#">TG</a>
+				</div>
+				
+				<div class="col col-sm-7 col-md-7 ">
+					<a class="text-dark h1 text-center" href="#">Украинская Правда</a>
+				</div>
+
+				<div class="align-self-center">
+					<a class="d-none d-lg-inline-block btn btn-outline-secondary" href="#">
+						<span>УКР</span>
+						<span>/</span>
+						<span>РУС</span>
+					</a>
+					<button class="btn btn-outline-secondary mr-3 mr-sm-0" type="button" data-toggle="modal" data-target="#searchModal">Поиск</button>
+				</div>
+
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-light py-0 border-top">
+			<div class="collapse navbar-collapse justify-content-center">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" href="#">ГЛАВНАЯ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">НОВОСТИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ПУБЛИКАЦИИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">КОЛОНКИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ИНТЕРВЬЮ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ГРАФИКА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ФОТО/ВИДЕО</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">БЛОГИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">АРХИВ</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<div id="carouselControls" class="carousel slide align-items-center mb-5" data-ride="carousel">
+		<div class="container d-flex align-items-center ">
+			<div class="row">
+				<div class="carousel-inner col py-4">
+
+					<div class="carousel-item active">
+						<div class="row">
+							<div class="col">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-sm-block">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-lg-block">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-sm-block">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-lg-block">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-sm-block">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-lg-block">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="controls col-auto align-self-center">
+					<a class="float-right px-2 py-1 border " href="#carouselControls" data-slide="next">
+						<span class="h4 text-white">🡢</span>
+						<!-- <span class="sr-only">Next</span> -->
+					<a class="float-right px-2 py-1 border border-right-0" href="#carouselControls" data-slide="prev">
+						<span class="h4 text-white">🡠</span>
+						<!-- <span class="sr-only">Previous</span> -->
+					</a>
+					</a>
+				</div>
+			</div>
+				
+		</div>
+			
+	</div>
+
+	<div class="container ">
+		<div class="row">
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+				<div class="news-head">
+					<div class="news-select float-right mt-2">
+						<a class="text-red" href="#">ПОСЛЕДНИЕ</a>
+						<a class="ml-2 text-muted" href="#">НОВЫЕ</a>
+					</div>
+					<h4 class="text-red font-weight-bold">НОВОСТИ</h4>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1 border-bottom-0 mb-4">
+						<div class="float-left">
+							<span>14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+				</ul>
+				<a class="d-block px-3 py-2 border mb-5" href="#">
+					<span class="text-uppercase text-red">все публикации</span>
+					<span class="float-right font-weight-bold">🡢</span>
+				</a>
+			</div>
+			<!-- ВТОРОЙ СТОЛБЕЦ -->
+			<div class="col">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 border-left">
+						<!-- ГЛАВНАЯ НОВОСТЬ -->
+						<div class="card border-0 border-bottom-red mb-2">
+							<img class="card-img-top" src="img/news-col/news.JPG" alt="">
+							<div class="card-body px-0">
+								<a href="#"><h2>Заголовок какой-то новости о чем-то</h2></a>
+								<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ratione voluptate rerum.</p>
+								<p class="card-text"><small class="text-muted">5 февраля 2016, 17:55</small></p>
+							</div>
+						</div>
+						<div class="news-head">
+							<div class="news-select float-right">
+								<a class="text-muted text-uppercase" href="#">все публикации</a>
+							</div>
+							<a href="#"><span class="h5 text-red font-weight-bold mb-2">ПОДРОБНО</span></a>
+						</div>
+						<!-- ОСТАЛЬНЫЕ НОВОСТИ -->
+						<ul class="list-group list-group-flush">
+
+							<li class="list-group-item px-0 pb-0 border-0">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<span class="position-absolute mt-2 ml-2 py-0 px-1 bg-red text-white text-uppercase">интервью</span>
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="text-muted mt-1">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="list-group-item px-0 pb-0 pt-4">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="text-muted mt-1">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="list-group-item px-0 pt-4 pb-0 mb-4"><a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="text-muted mt-1">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- ГЛАВНАЯ НОВОСТЬ -->
+						<div class="card border-0 mb-2">
+							<img class="card-img-top" src="img/news-col/news.JPG" alt="">
+							<div class="card-body px-0">
+								<a href="#"><h2>Заголовок какой-то новости о чем-то</h2></a>
+								<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ratione voluptate rerum.</p>
+								<p class="card-text"><small class="text-muted">5 февраля 2016, 17:55</small></p>
+							</div>
+						</div>
+						<!-- ОСТАЛЬНЫЕ НОВОСТИ -->
+						<ul class="list-group list-group-flush">
+
+							<li class="list-group-item px-0 pt-4 pb-0">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<span class="position-absolute mt-2 ml-2 py-0 px-1 bg-red text-white text-uppercase">интервью</span>
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="text-muted mt-1">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="list-group-item px-0 pt-4 pb-0">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="text-muted mt-1">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="list-group-item px-0 pt-4 pb-0 mb-4 border-bottom-0"><a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="text-muted mt-1">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<a class="d-block px-3 py-2 border mb-5" href="#">
+							<span class="text-uppercase text-red">все публикации</span>
+							<span class="float-right font-weight-bold">🡢</span>
+						</a>
+
+						
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 border-left">
+						<p>Новости третьего столбика которые идут как дополнительные обо всем</p>
+						<p>Новости третьего столбика которые идут как дополнительные обо всем</p>
+						<p>Новости третьего столбика которые идут как дополнительные обо всем</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
