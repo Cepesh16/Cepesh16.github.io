@@ -16,9 +16,18 @@ a:hover {
 }
 
 .carousel {
-	background: #555;
+	background: #333;
 	border-top: .4rem solid #a22;
 }
+.separator:before{
+	content: "";
+	height: 60px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-left: 1px solid #555;
+}
+
 .controls {
 	/*width: 65px;*/
 }
