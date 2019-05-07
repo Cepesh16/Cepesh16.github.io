@@ -17,7 +17,7 @@ a:hover {
 
 .carousel {
 	background: #333;
-	border-top: .4rem solid #a22;
+	border-top: .3rem solid #a22;
 }
 .separator:before{
 	content: "";
@@ -41,6 +41,9 @@ a:hover {
 
 .navbar-light .navbar-nav .active>.nav-link{
 	color: #a22;
+}
+.text-small {
+	font-size: 0.9rem;
 }
 
 
