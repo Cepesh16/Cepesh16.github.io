@@ -8,17 +8,21 @@ a:hover {
 	color: #a22;
 	text-decoration: none;
 }
+
 .text-red {
 	color: #a22 !important;
 }
+
 .bg-red {
 	background: #a22;
 }
 
+/*цвет слайдера*/
 .carousel {
 	background: #333;
 	border-top: .3rem solid #a22;
 }
+/*разделитель блоков в слайдере*/
 .separator:before{
 	content: "";
 	height: 60px;
@@ -28,9 +32,6 @@ a:hover {
 	border-left: 1px solid #555;
 }
 
-.controls {
-	/*width: 65px;*/
-}
 
 .navbar-nav a {
 	font-size: 0.8rem;
@@ -50,11 +51,7 @@ a:hover {
 .news-select {
 	font-size: 0.8rem;
 }
-/* 
-.modal-backdrop.show, .modal-content, .list-group-item {
-	background-color: transparent;
-	opacity: .98 !important;
-} */
+
 .modal-backdrop.show {
 	background: white;
 }
@@ -67,10 +64,3 @@ a:hover {
 	border-bottom: 1px solid #aaa !important;
 	border-radius: 0;
 }
-/* 
-.modal-content, .list-group-item {
-	background: transparent;
-}
-.modal-backdrop {
-	background-color: transparent;
-} */
