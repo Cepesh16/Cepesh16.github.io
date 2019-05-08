@@ -56,6 +56,10 @@ a:hover {
 	background: white;
 }
 
+.border-top-red {
+	border-top: 1px solid #a22 !important;
+	border-radius: 0;
+}
 .border-bottom-red {
 	border-bottom: 1px solid #a22 !important;
 	border-radius: 0;
