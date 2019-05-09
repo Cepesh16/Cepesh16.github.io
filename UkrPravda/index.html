@@ -131,7 +131,7 @@
 		</nav>
 	</header>
 	
-	<div id="carouselControls" class="carousel slide align-items-center mb-5" data-ride="carousel">
+	<div id="carouselControls" class="carousel carousel-news slide align-items-center mb-5" data-ride="carousel">
 		<div class="container align-items-center ">
 			<div class="row">
 				<div class="carousel-inner col py-4">
@@ -244,11 +244,11 @@
 		<div class="row">
 			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 				<div class="news-head">
-					<div class="news-select float-right mt-2">
+					<div class="news-select float-right mt-1">
 						<a class="text-red" href="#">ПОСЛЕДНИЕ</a>
 						<a class="ml-2 text-muted" href="#">НОВЫЕ</a>
 					</div>
-					<h4 class="text-red font-weight-bold">НОВОСТИ</h4>
+					<h5><a class="text-red" href="#">НОВОСТИ</a></h5>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item px-1">
@@ -445,7 +445,7 @@
 							<div class="news-select float-right">
 								<a class="text-muted text-uppercase" href="#">все публикации</a>
 							</div>
-							<a href="#"><span class="h5 text-red font-weight-bold mb-2">ПОДРОБНО</span></a>
+							<h5><a class="text-red mb-2" href="#">ПОДРОБНО</h5></a>
 						</div>
 						<!-- ОСТАЛЬНЫЕ НОВОСТИ -->
 						<ul class="list-group list-group-flush">
@@ -575,18 +575,68 @@
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 border-left">
 						<ul class="list-group list-group-flush border-top-red">
-							<li class="list-group-item px-0">
-								<h4><a class="text-uppercase text-red font-weight-bold" href="">блоги</a></h4>
+							<!-- заголовок + навигация слайдера -->
+							<li class="list-group-item px-0 py-1 d-flex justify-content-between align-items-center">
+								
+								<h5 class="m-0"><a class="text-uppercase text-red" href="#">блоги</a></h5>
 								<div class="controls">
-									<a class="controls-prev-icon" href=""></a>
+									<a class="float-left px-2 pt-1 pb-2 border-right" href="#carouselBlogs" data-slide="prev">
+										<img src="img/icon/png/chevron-left-2x.png" alt="previous"></a>
+									<a class="float-left px-2 pt-1 pb-2" href="#carouselBlogs" data-slide="next">
+										<img src="img/icon/png/chevron-right-2x.png" alt="next"></a>
 								</div>
 							</li>
-							<li class="list-group-item">2</li>
-							<li class="list-group-item">3</li>
+							<!-- слайдер -->
+							<li class="list-group-item px-0">
+
+								<div id="carouselBlogs" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog.jpg" alt="изображение">
+											<span class="text-uppercase text-red">заголовок</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+										<div class="carousel-item">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+											<span class="text-uppercase text-red">заголовок</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+										<div class="carousel-item">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog.jpg" alt="изображение">
+											<span class="text-uppercase text-red">заголовок</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item px-0 border-top-red">
+								<h5><a class="text-uppercase text-red" href="#">колонки</a></h5>
+								<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+								<span class="text-uppercase text-red">заголовок</span>
+								<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</li>
+							<li class="list-group-item px-0">
+								<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+								<span class="text-uppercase text-red">заголовок</span>
+								<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</li>
+							<li class="list-group-item px-0">
+								<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+								<span class="text-uppercase text-red">заголовок</span>
+								<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</li>
+							<li class="list-group-item px-0">
+								<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+								<span class="text-uppercase text-red">заголовок</span>
+								<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</li>
+							<li class="list-group-item px-0">
+								<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+								<span class="text-uppercase text-red">заголовок</span>
+								<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</li>
 						</ul>
-						<p>Новости третьего столбика которые идут как допол обо всем</p>
-						<p>Новости третьего столбика которые идут как дополнительные обо всем</p>
-						<p>Новости третьего столбика которые идут как дополнительные обо всем</p>
 					</div>
 				</div>
 			</div>
