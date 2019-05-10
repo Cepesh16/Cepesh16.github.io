@@ -46,7 +46,6 @@ a:hover {
 	font-size: 0.9rem;
 }
 
-
 .news-select {
 	font-size: 0.8rem;
 }
@@ -69,4 +68,13 @@ a:hover {
 }
 .list-group-item {
 	border: 1px solid #ddd;
+}
+
+.pos-bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.img-shadow {
+	background: linear-gradient(to top, black 0%, transparent 100%)
 }
