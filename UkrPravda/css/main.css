@@ -1,6 +1,5 @@
 html {
 	font-size: 14px;
-	height: 3500px;
 }
 a {
 	color: #000;
@@ -10,13 +9,6 @@ a:hover {
 	text-decoration: none;
 }
 
-.text-red {
-	color: #a22 !important;
-}
-
-.bg-red {
-	background: #a22;
-}
 
 /*цвет слайдера*/
 .carousel-news {
@@ -33,22 +25,12 @@ a:hover {
 	border-left: 1px solid #555;
 }
 
-.navbar-nav a {
-	font-size: 0.8rem;
-}
-.navbar:nth-child(3) .navbar-nav a {
+/*.navbar:nth-child(3) .navbar-nav a {
 	font-size: 1rem;
-}
+}*/
 
 .navbar-light .navbar-nav .active>.nav-link{
 	color: #a22;
-}
-.text-small {
-	font-size: 0.9rem;
-}
-
-.news-select {
-	font-size: 0.8rem;
 }
 
 .modal-backdrop.show {
@@ -78,4 +60,47 @@ a:hover {
 }
 .img-shadow {
 	background: linear-gradient(to top, black 0%, transparent 100%)
+}
+/*ТЕКСТ*/
+.text-regular {
+	font-size: 1rem;
+}
+.text-small {
+	font-size: 0.8rem;
+}
+.text-big {
+	font-size: 2rem;
+}
+/*.text-date {
+	font-size: 0.8rem;
+}*/
+.text-red {
+	color: #a22 !important;
+}
+
+.bg-red {
+	background: #a22;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.controls {
+	/*height: 2rem;*/
+}
+.controls-icon {
+	/*height: 1.3rem;*/
+}
+
+.list-group-item {
+	background: transparent;
+}
+
+.bg-silver {
+	background: #f3f3f3;
+}
+
+footer {
+	height: 500px;
 }
