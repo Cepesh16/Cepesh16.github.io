@@ -1,0 +1,97 @@
+body {
+	background: url(../img/dotted.png) repeat 0 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	overflow-y: scroll;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+.bg-header {
+	background: #0f5092;
+}
+
+.btn {
+	border-radius: 0;
+}
+.btn-logout {
+	color: #fff;
+}
+.btn-logout:hover {
+	background: #47a3da;
+}
+.btn-logout .fa-power-off {
+	font-size: 1.3em;
+}
+
+
+.panel {
+	height: 220px;
+	background: #fff;
+	border-top: 5px solid #34495e;
+	border-radius: 3px 3px 0 0;
+}
+.panel ul.list-group li {
+	font-size: 12px;
+}
+.panel ul.list-group li.list-group-item {
+	padding
+}
+
+
+.panel-header {
+	/*height: 30px;*/
+}
+.panel-icon {
+	width: 48px;
+	height: 48px;
+	background: #F39C12;
+	top: -35px;
+	left: 42%;
+}
+
+.panel-icon .fas {
+	display: table-cell;
+	color: #fff;
+	vertical-align: middle;
+	height: 48px;
+	width: 48px;
+
+}
+.login-icon{
+    display:inline-block;
+    font-size: 40px;
+    line-height: 50px;
+    background-color:black;
+    color:white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+
+.panel-body {
+	padding: 0.6rem;
+}
+.panel-body p {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 270px;
+	height: 95px;
+	font-size: 16px;
+}
+
+.panel-footer {
+	width: 100px;
+}
+.panel-footer a {
+	width: 100%;
+	background: #e6e6e6;
+}
+
+.btn-view {
+	height: 3rem;
+}

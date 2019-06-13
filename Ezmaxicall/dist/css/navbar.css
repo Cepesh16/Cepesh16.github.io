@@ -1,0 +1,52 @@
+.navbar {
+  justify-content: start;
+  padding: 0;
+}
+
+.navbar-dark .navbar-toggler {
+  border: 0;
+  color: #fff;
+}
+
+.offcanvas-collapse {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -300px;
+  width: 300px;
+  padding-top: 3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  overflow-y: auto;
+  visibility: hidden;
+  background-color: #47a3da;
+  transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+  transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  z-index: 999;
+}
+
+.offcanvas-collapse.open {
+  visibility: visible;
+  -webkit-transform: translateX(300px);
+  transform: translateX(300px);
+  z-index: 999;
+}
+
+.offcanvas-close {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+  border: none;
+  -webkit-appearance: button;
+  background-color: transparent;
+  right: 0;
+  top: 0;
+  padding: 0 1.5rem;
+}
+
+.offcanvas-open {
+  /*overflow: hidden;*/
+}
