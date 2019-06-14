@@ -6,7 +6,7 @@ html, body {
 
 body {
 	margin-top: 55px;
-	background: url(../img/dotted.png) repeat 0 0;
+	background: #f7f7f7;;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/*overflow-y: scroll;*/
 }
@@ -96,4 +96,10 @@ header {
 	height: 3rem;
 }
 
+
+
+/*MANAGE-STORE CSS*/
+table, form {
+	font-size: 0.8rem;
+}
 
