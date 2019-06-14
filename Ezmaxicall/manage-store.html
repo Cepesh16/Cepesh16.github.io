@@ -19,7 +19,7 @@
 
 	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
 	
-  		<title>Dashboard</title>
+  		<title>Store Management</title>
 	
 
   </head>
@@ -77,7 +77,7 @@
 
 	<!-- CONTAINER -->
 	<main class="container">
-		<h1 class="mb-5">Store managment</h1>
+		<h1 class="">Store managment</h1>
 
 		<div class="control-panel">
 			<div class="row flex-row-reverse mb-3">
@@ -227,35 +227,40 @@
 <script type="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
 		
 
-<!-- navbar -->
-<script>
-  $(function () {
-    'use strict';
+	<!-- navbar -->
+	<script>
+	  $(function () {
+	    'use strict';
 
-    $('[data-toggle="offcanvas"]').on('click', function () {
-      $('.offcanvas-collapse').addClass('open');
-      $('body').addClass('offcanvas-open');
-    })
-    $('[data-toggle="offcanvas-close"]').on('click', function () {
-      $('.offcanvas-collapse').removeClass('open');
-      $('body').removeClass('offcanvas-open');
+	    $('[data-toggle="offcanvas"]').on('click', function () {
+	      $('.offcanvas-collapse').addClass('open');
+	      $('body').addClass('offcanvas-open');
+	    })
+	    $('[data-toggle="offcanvas-close"]').on('click', function () {
+	      $('.offcanvas-collapse').removeClass('open');
+	      $('body').removeClass('offcanvas-open');
 
-    })
-  })
-</script>
-<!-- table -->
-<script>
-	$(document).ready( function () {
-    $('#storeManagement').DataTable();
-} );
-</script>
-<!-- Disable search by default -->
-<script>
-
-$.extend( $.fn.dataTable.defaults, {
-    searching: false
-} );
-</script>
+	    })
+	  })
+	</script>
+	<!-- table -->
+	<script>
+		$(document).ready( function () {
+	    $('#storeManagement').DataTable();
+	} );
+	</script>
+	<!-- Disable search by default -->
+	<script>
+		$.extend( $.fn.dataTable.defaults, {
+		    searching: false
+		} );
+	</script>
+	<!-- show entries убарть -->
+	<script>
+		$('#storeManagement').dataTable( {
+		  "lengthChange": false
+		} );
+	</script>
 
   </body>
 </html>
