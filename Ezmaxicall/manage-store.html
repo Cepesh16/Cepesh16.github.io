@@ -82,45 +82,34 @@
 		<div class="control-panel">
 			<div class="row flex-row-reverse mb-3">
 				<div class="col-4">
-					<a class="btn btn-secondary rounded float-right" href="#"><i class="fas fa-plus-circle mr-2"></i>Add Store</a>
+					<a class="btn btn-secondary rounded float-right" href="./insert-store.html"><i class="fas fa-plus-circle mr-2"></i>Add Store</a>
 				</div>
 			</div>
 
-			<div class="row bg-white border px-3 mx-0 mb-3 justify-content-between">
-				<form class="form-inline w-100">
-					
-					<div class="form-group my-2">
-						<label for="login">Login</label>
-						<div class="col-md-3 mr-5">
-							<input type="text" class="form-control" id="login">
-						</div>
-					</div>
-					
-					<div class="form-group my-2">
-						<label for="store">Store</label>
-						<div class="col-md-3 mr-5">
-							<input type="text" class="form-control" id="store">
-						</div>
-					</div>
+	<div class="row bg-white border px-3 mx-0 mb-3 justify-content-between">
+		<form class="form-inline w-100">
 
-					<div class="form-group my-2">
-						<label for="sub-distributor" class="mr-2">Sub-Distributor</label>
-						<select id="sub-distributor" class="mr-2">
-							<option></option>
-
-						</select>
-					</div>
-
-					<div class="form-group ml-auto">
-						<div class="">
-							<a class="btn btn-dark rounded" href="#"><i class="fas fa-search mr-2"></i>Search</a>
-						</div>
-					</div>
-
-				</form>
+			<div class="form-group my-2">
+				<label for="col0_filter">Login</label>
+				<div class="col-md-3 mr-5" id="filter_col1" data-column="0">
+					<input type="text" class="form-control column_filter" id="col0_filter">
+				</div>
 			</div>
-		</div>
+			
+			<div class="form-group my-2">
+				<label for="store">Store</label>
+				<div class="col-md-3 mr-5 " id="filter_col2" data-column="1">
+					<input type="text" class="form-control column_filter" id="col1_filter">
+				</div>
+			</div>
+
+
+		</form>
+	</div>
 		
+
+
+
 		<table id="storeManagement" class="table table-striped table-bordered" style="width:100%">
       <thead>
           <tr>
@@ -144,7 +133,7 @@
               <td>
               	<ul class="nav flex-column">
               		<li class="nav-item"><i class="mr-2 fas fa-plane"></i><a href="">Store Login</a></li>
-              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="">Edit Agent</a></li>
+              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="./insert-store.html">Edit Agent</a></li>
               	</ul>
               </td>
           </tr>
@@ -158,7 +147,7 @@
               <td>
               	<ul class="nav flex-column">
               		<li class="nav-item"><i class="mr-2 fas fa-plane"></i><a href="">Store Login</a></li>
-              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="">Edit Agent</a></li>
+              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="./insert-store.html">Edit Agent</a></li>
               	</ul>
               </td>
           </tr>
@@ -172,7 +161,7 @@
               <td>
               	<ul class="nav flex-column">
               		<li class="nav-item"><i class="mr-2 fas fa-plane"></i><a href="">Store Login</a></li>
-              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="">Edit Agent</a></li>
+              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="./insert-store.html">Edit Agent</a></li>
               	</ul>
               </td>
           </tr>    
@@ -186,14 +175,13 @@
               <td>
               	<ul class="nav flex-column">
               		<li class="nav-item"><i class="mr-2 fas fa-plane"></i><a href="">Store Login</a></li>
-              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="">Edit Agent</a></li>
+              		<li class="nav-item"><i class="mr-2 fas fa-edit"></i><a href="./insert-store.html">Edit Agent</a></li>
               	</ul>
               </td>
           </tr>
       </tbody>
 
     </table>
-
 
 
 
@@ -249,16 +237,51 @@
 	    $('#storeManagement').DataTable();
 	} );
 	</script>
-	<!-- Disable search by default -->
-	<script>
-		$.extend( $.fn.dataTable.defaults, {
-		    searching: false
-		} );
-	</script>
+<!-- 	Disable search by default
+<script>
+	$.extend( $.fn.dataTable.defaults, {
+	    searching: false
+	} );
+</script> -->
 	<!-- show entries убарть -->
 	<script>
 		$('#storeManagement').dataTable( {
 		  "lengthChange": false
+		} );
+	</script>
+
+	<script>
+
+		// function filterGlobal () {
+		    // $('#storeManagement').DataTable().search(
+		        // $('#global_filter').val(),
+		        // $('#global_regex').prop('checked'),
+		        // $('#global_smart').prop('checked')
+		    // ).draw();
+		// }
+		
+		// прячем стандартное поле search 
+		$(".dataTables_filter").hide();
+
+
+		function filterColumn ( i ) {
+		    $('#storeManagement').DataTable().column( i ).search(
+		        $('#col'+i+'_filter').val(),
+/*		        $('#col'+i+'_regex').prop('checked'),
+		        $('#col'+i+'_smart').prop('checked')*/
+		    ).draw();
+		}
+		 
+		$(document).ready(function() {
+		    $('#storeManagement').DataTable();
+		 
+		    $('input.global_filter').on( 'keyup click', function () {
+		        filterGlobal();
+		    } );
+		 
+		    $('input.column_filter').on( 'keyup click', function () {
+		        filterColumn( $(this).parents('div').attr('data-column') );
+		    } );
 		} );
 	</script>
 

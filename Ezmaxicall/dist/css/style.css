@@ -106,3 +106,8 @@ table th {
 	font-size: 1rem;
 }
 
+
+/*INSERT-STORE CSS*/
+.border-top-3 {
+	border-top: 5px solid #34495e;
+}
