@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./dist/bootstrap-4.3.1/css/bootstrap.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="dist/css/input.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
 
 	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
@@ -94,23 +95,37 @@
 				  </thead>
 
 				  <tbody>
-				    <tr class="table-row-1">
+
+				    <tr>
 				    	<td>
 				    		<a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a>
 				    	</td>
-				      <td>Topup Haiti 11%</td>
+				      <td>
+		      	    <div class="account-info">
+									<div class="row justify-content-center">
+					            <div class="col-auto"><span id="company-name">Company name</span></div>
+					        </div>
+					      </div>
+				      </td>
 				      <td>Topup Haiti 11%</td>
 				      <td>
-				      	<a href="#" id="editRow1"><i class="fas fa-edit mr-2"></i></a>
+				      	<a href="#" class="change-company-name"><i class="fas fa-edit mr-2"></i></a>
 				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
 				      </td>
 				    </tr>
-				    <tr class="table-row-2">
+
+				    <tr>
 				    	<td><a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a></td>
-				      <td>Topup Haiti 11%</td>
+				      <td>
+		      	    <div class="account-info">
+									<div class="row justify-content-center">
+					            <div class="col-auto"><span id="company-name">Company name</span></div>
+					        </div>
+					      </div>
+					    </td>
 				      <td>Topup Haiti 11%</td>
 				      <td>
-				      	<a href="#" id="editRow2"><i class="fas fa-edit mr-2"></i></a>
+				      	<a href="#" class="change-company-name"><i class="fas fa-edit mr-2"></i></a>
 				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
 				      </td>
 				    </tr>
@@ -144,9 +159,6 @@
 
 		</div>
 
-		
-
-
 	</main>
 
 
@@ -159,7 +171,9 @@
 
 <script src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
-		
+<script src="./dist/js/bootstrap-tagsinput.min.js"></script>
+<script src="./dist/js/bootstrap-editable.min.js"></script>
+<script src="./dist/js/scripts.js"></script>
 
 <script>
   $(function () {
@@ -183,22 +197,22 @@
 		$('#tableDiscountPlanForStore tbody').append('<tr><td><a href=""><i class="fas fa-sitemap d-block"></i>View Details</a></td><td><input type="text"></td><td><input type="checkbox"></td><td><a href=""><i class="fas fa-save mr-2"></i></a><a href=""><i class="fas fa-trash-alt"></i></a></td></tr>');
 	})
 
-
+/*
 	$('#editRow1').click(function() {
 		var text = $('input').val();
 		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').text(text);
 	})
-
+*/
 /*	$('#editRow1').click(function() {
 		var text = $('input').val();
 		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').text(text);
 	})*/
 	// добавить input
-	$('#editRow1').click(function() {
+/*	$('#editRow1').click(function() {
 		// $('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').attr('contenteditable','true').addClass('bg-info');
 		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').append('<input type="text">');
 	})
-
+*/
 </script>
 <!-- btnAddToUpDiscountPlanForStore -->
 
