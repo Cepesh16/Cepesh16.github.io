@@ -126,3 +126,8 @@ table th {
 .panel-d-none {
 	display: none;
 }
+
+/*MANAGE-DISCOUNT-PLAN CSS*/
+.table .fas {
+	font-size: 1rem;
+}

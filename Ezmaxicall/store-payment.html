@@ -315,13 +315,14 @@
 
 <!-- покать/скрыть панели по кнопкам Cash/Adjust -->
 <script>
+	// по клику на radio "Cash" показываем две панели
 	$('#cashInvoiceAndRecharge').click(function() {
 		if($(this).prop('checked')) {
 			$('#panelSendInvoiceEmail').removeClass('d-none');
 			$('#panelRechargeAmount').removeClass('d-none');
 		}
 	})
-
+	// по клику на radio "Adjust" показываем одну панель
 	$('#ajustAccountBalance').click(function() {
 		if($(this).prop('checked')) {
 			$('#panelAdjustAccountBalance').removeClass('d-none');
