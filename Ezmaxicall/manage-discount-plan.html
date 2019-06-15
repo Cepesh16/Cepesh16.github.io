@@ -183,12 +183,23 @@
 		$('#tableDiscountPlanForStore tbody').append('<tr><td><a href=""><i class="fas fa-sitemap d-block"></i>View Details</a></td><td><input type="text"></td><td><input type="checkbox"></td><td><a href=""><i class="fas fa-save mr-2"></i></a><a href=""><i class="fas fa-trash-alt"></i></a></td></tr>');
 	})
 
+
 	$('#editRow1').click(function() {
-		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').attr('contenteditable','true').addClass('bg-info');
+		var text = $('input').val();
+		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').text(text);
+	})
+
+/*	$('#editRow1').click(function() {
+		var text = $('input').val();
+		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').text(text);
+	})*/
+	// добавить input
+	$('#editRow1').click(function() {
+		// $('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').attr('contenteditable','true').addClass('bg-info');
+		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').append('<input type="text">');
 	})
 
 </script>
-
 <!-- btnAddToUpDiscountPlanForStore -->
 
   </body>
