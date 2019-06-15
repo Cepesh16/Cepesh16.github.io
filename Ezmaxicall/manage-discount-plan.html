@@ -94,24 +94,24 @@
 				  </thead>
 
 				  <tbody>
-				    <tr>
+				    <tr class="table-row-1">
 				    	<td>
-				    		<a href=""><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    		<a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a>
 				    	</td>
 				      <td>Topup Haiti 11%</td>
 				      <td>Topup Haiti 11%</td>
 				      <td>
-				      	<a href="" id="editRow1"><i class="fas fa-edit mr-2"></i></a>
-				      	<a href="" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
+				      	<a href="#" id="editRow1"><i class="fas fa-edit mr-2"></i></a>
+				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
 				      </td>
 				    </tr>
-				    <tr>
-				    	<td><a href=""><i class="fas fa-sitemap d-block"></i>View Details</a></td>
+				    <tr class="table-row-2">
+				    	<td><a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a></td>
 				      <td>Topup Haiti 11%</td>
 				      <td>Topup Haiti 11%</td>
 				      <td>
-				      	<a href="" id="editRow2"><i class="fas fa-edit mr-2"></i></a>
-				      	<a href="" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
+				      	<a href="#" id="editRow2"><i class="fas fa-edit mr-2"></i></a>
+				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
 				      </td>
 				    </tr>
 				  </tbody>
@@ -184,7 +184,7 @@
 	})
 
 	$('#editRow1').click(function() {
-		$('#tableDiscountPlanForStore #editRow1').append('<tr><td><a href=""><i class="fas fa-sitemap d-block"></i>View Details</a></td><td><input type="text"></td><td><input type="checkbox"></td><td><a href=""><i class="fas fa-save mr-2"></i></a><a href=""><i class="fas fa-trash-alt"></i></a></td></tr>');
+		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').attr('contenteditable','true').addClass('bg-info');
 	})
 
 </script>
