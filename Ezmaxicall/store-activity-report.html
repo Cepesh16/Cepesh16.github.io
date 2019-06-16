@@ -86,6 +86,17 @@
 				<form class="form-inline w-100">
 					
 					<div class="form-group my-2">
+						<label for="col0_filter">Store</label>
+						<div class="col-md-3 mr-5" id="filter_col1" data-column="0">
+							<select id="selectActivityType">
+								<option>All</option>
+								<option>another type</option>
+								<option>32393</option>
+								<option>morty</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group my-2">
 						<label for="globalSearch">Find</label>
 						<div class="col-md-3 mr-5 " id="filter_col2" data-column="1">
 							<input type="text" class="form-control column_filter" id="globalSearch" placeholder="search">
@@ -104,6 +115,16 @@
 							<!-- <input type="text" class="form-control column_filter" id="col0_filter"> -->
 						</div>
 					</div>
+					
+					<div class="dropdown mr-3">
+					  <button class="btn btn-secondary dropdown-toggle py-1 rounded" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-save"></i></button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					  	<button class="dropdown-item border-bottom">excel</button>
+					  	<button class="dropdown-item border-bottom">fff</button>
+							<button class="dropdown-item ">sss</button>
+					  </div>
+					</div>
+					<button class="btn btn-secondary py-1 rounded"><i class="fas fa-sync-alt"></i></button>
 
 
 				</form>
@@ -118,14 +139,13 @@
           <tr>
               <th>ID</th>
               <th>Date</th>
-              <th>Transaction Amount</th>
-              <th>Commission Amount</th>
-              <th>Net Commission</th>
+              <th>Amount</th>
+              <th>Commission</th>
               <th>Running Balance</th>
               <th>Type</th>
               <th>Description</th>
-              <th>User</th>
-              <th>Store Name</th>
+              <th>Agent</th>
+              <th>Reseller</th>
           </tr>
       </thead>
       <tbody>
@@ -137,7 +157,6 @@
               <td>1.2</td>
               <td>61</td>
               <td>System</td>
-              <td>2011/04/25</td>
               <td>834</td>
               <td>Edinburgh</td>
           </tr>
@@ -149,7 +168,6 @@
               <td>1.2</td>
               <td>61</td>
               <td>Accoun</td>
-              <td>2011/04/25</td>
               <td>834</td>
               <td>Tokyo</td>
           </tr>
@@ -161,7 +179,6 @@
               <td>1.2</td>
               <td>61</td>
               <td>Region Director</td>
-              <td>2011/04/25</td>
               <td>834</td>
               <td>San Francisco</td>
           </tr>    
@@ -173,7 +190,6 @@
               <td>1.2</td>
               <td>61</td>
               <td>Pre-Sa Support</td>
-              <td>2011/04/25</td>
               <td>834</td>
               <td>New York</td>
           </tr>
