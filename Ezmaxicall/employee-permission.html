@@ -16,7 +16,7 @@
 
 	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
 	
-  		<title>Dashboard</title>
+  		<title>Employee Permission</title>
 	
 
   </head>
@@ -74,22 +74,30 @@
 
 	<!-- CONTAINER -->
 	<main class="container">
-		<h1 class="mb-5">Dashboard</h1>
+		<h3 class="d-inline-block mb-5 mr-2">Employee Permission:</h3>
+		<form class="d-inline-block">
+			<select class="font-weight-bold mr-2">
+				<option>Select Employee</option>
+				<option>user1</option>
+			</select>
+			<button class="btn btn-primary py-0" type="submit">Update</button>
+		</form>
+
 		<div class="row">
 			<div class="col-6 col-lg-4 mb-5">
 
 				<div class="panel text-center">
 					<div class="panel-header bg-secondary position-relative">
-						<h5 class="text-uppercase font-weight-bold py-3 text-light">manage store</h5>
+						<h5 class="text-uppercase font-weight-bold py-3 text-light">
+							<input id="manageStorePage" type="checkbox">
+							<label for="manageStorePage">manage store</label>
+						</h5>
 						<div class="panel-icon rounded-circle position-absolute">
 							<i class="fas fa-user"></i>
 						</div>
 					</div>
-					<div class="panel-body d-flex flex-column align-items-end">
-						<p class="align-self-center mt-auto">View/Manage your Stores.</p>
-						<div class="panel-footer mt-auto mx-auto">
-							<a class="btn rounded-top" href="./manage-store.html">View</a>
-						</div>
+					<div class="panel-body d-flex justify-content-center">
+						<p class="align-self-center">View/Manage your Stores.</p>
 					</div>
 				</div>
 			</div>
@@ -97,16 +105,34 @@
 
 				<div class="panel text-center">
 					<div class="panel-header bg-secondary position-relative">
-						<h5 class="text-uppercase font-weight-bold py-3 text-light">store payment</h5>
+						<h5 class="text-uppercase font-weight-bold py-3 text-light">
+							<input id="storePaymentPage" type="checkbox">
+							<label for="storePaymentPage">store payment</label>
+						</h5>
 						<div class="panel-icon rounded-circle position-absolute">
 							<i class="fas fa-user"></i>
 						</div>
 					</div>
-					<div class="panel-body d-flex flex-column align-items-end">
-						<p class="align-self-center mt-auto">Take payments from Stores.</p>
-						<div class="panel-footer mt-auto mx-auto">
-							<a class="btn rounded-top" href="store-payment.html">View</a>
+					<div class="panel-body d-flex justify-content-center">
+						<p class="align-self-center">Take payments from Stores.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-lg-4 mb-5">
+
+				<div class="panel text-center">
+					<div class="panel-header bg-secondary position-relative">
+						<h5 class="text-uppercase font-weight-bold py-3 text-light">
+							<input id="manageDiscountPlanPage" type="checkbox">
+							<label for="manageDiscountPlanPage">manage discount plan</label>
+						</h5>
+						<div class="panel-icon rounded-circle position-absolute">
+							<i class="fas fa-user"></i>
 						</div>
+					</div>
+					<div class="panel-body d-flex justify-content-center">
+						<p class="align-self-center">TopUp Discount for Store</p>
 					</div>
 				</div>
 			</div>
@@ -114,34 +140,32 @@
 
 				<div class="panel text-center">
 					<div class="panel-header bg-secondary position-relative">
-						<h5 class="text-uppercase font-weight-bold py-3 text-light">manage discount plan</h5>
-						<div class="panel-icon rounded-circle position-absolute">
-							<i class="fas fa-user"></i>
-						</div>
-					</div>
-					<div class="panel-body d-flex flex-column align-items-end">
-						<p class="align-self-center mt-auto">TopUp Discount for Store</p>
-						<div class="panel-footer mt-auto mx-auto">
-							<a class="btn rounded-top" href="manage-discount-plan.html">View</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-6 col-lg-4 mb-5">
-
-				<div class="panel text-center">
-					<div class="panel-header bg-secondary position-relative">
-						<h5 class="text-uppercase font-weight-bold py-3 text-light">report</h5>
+						<h5 class="text-uppercase font-weight-bold py-3 text-light">
+							<input id="reportPage" type="checkbox">
+							<label for="reportPage">report</label>
+						</h5>
 						<div class="panel-icon rounded-circle position-absolute">
 							<i class="fas fa-user"></i>
 						</div>
 					</div>
 					<div class="panel-body text-left">
 						<ul class="list-group list-group-flush w-75 pt-2 mx-auto">
-							<li class="list-group-item p-1 pl-3"><a href=""><i class="fas fa-angle-right pr-2"></i>Distributor Transactions</a></li>
-							<li class="list-group-item p-1 pl-3"><a href=""><i class="fas fa-angle-right pr-2"></i>Store Activity Report</a></li>
-							<li class="list-group-item p-1 pl-3"><a href=""><i class="fas fa-angle-right pr-2"></i>Distributor Commission Report</a></li>
-							<li class="list-group-item p-1 pl-3"><a href=""><i class="fas fa-angle-right pr-2"></i>Store Receivables</a></li>
+							<li class="list-group-item p-1">
+								<input id="distributorTransactionsPage" class="mr-2" type="checkbox">
+								<label for="distributorTransactionsPage">Distributor Transactions</label>
+							</li>
+							<li class="list-group-item p-1">
+								<input id="storeActivityReportPage" class="mr-2" type="checkbox">
+								<label for="storeActivityReportPage">Store Activity Report</label>
+							</li>
+							<li class="list-group-item p-1">
+								<input id="distributorCommissionReportPage" class="mr-2" type="checkbox">
+								<label for="distributorCommissionReportPage">Distributor Commission Report</label>
+							</li>
+							<li class="list-group-item p-1">
+								<input id="storeReceivablesPage" class="mr-2" type="checkbox">
+								<label for="storeReceivablesPage">Store Receivables</label>
+							</li>
 						</ul>
 					</div>
 					<!-- <div class="panel-footer"></div> -->
@@ -151,15 +175,24 @@
 
 				<div class="panel text-center">
 					<div class="panel-header bg-secondary position-relative">
-						<h5 class="text-uppercase font-weight-bold py-3 text-light">employee</h5>
+						<h5 class="text-uppercase font-weight-bold py-3 text-light">
+							<input id="employeePage" type="checkbox">
+							<label for="employeePage">employee</label>
+						</h5>
 						<div class="panel-icon rounded-circle position-absolute">
 							<i class="fas fa-user"></i>
 						</div>
 					</div>
 					<div class="panel-body text-left">
 						<ul class="list-group list-group-flush w-75 pt-2 mx-auto">
-							<li class="list-group-item p-1 pl-3"><a href="employee-management.html"><i class="fas fa-angle-right pr-2"></i>Employee Management</a></li>
-							<li class="list-group-item p-1 pl-3"><a href="employee-permission.html"><i class="fas fa-angle-right pr-2"></i>Employee Permission</a></li>
+							<li class="list-group-item p-1">
+								<input id="employeeManagementPage" class="mr-2" type="checkbox">
+								<label for="employeeManagementPage">Employee Management</label>
+							</li>
+							<li class="list-group-item p-1">
+								<input id="employeePermissionPage" class="mr-2" type="checkbox">
+								<label for="employeePermissionPage">Employee Permission</label>
+							</li>
 						</ul>
 					</div>
 					<!-- <div class="panel-footer"></div> -->

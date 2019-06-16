@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	-->
 	<link rel="stylesheet" href="./dist/bootstrap-4.3.1/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="dist/DataTables/dataTables.bootstrap4.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/input.css">
@@ -98,7 +100,7 @@
 
 				    <tr>
 				    	<td>
-				    		<a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    		<a href="#" id="viewDetailsRow1"><i class="fas fa-sitemap d-block"></i>View Details</a>
 				    	</td>
 				      <td>
 		      	    <div class="account-info">
@@ -159,12 +161,96 @@
 
 		</div>
 
+
+
+
+		<div class="row d-none" id="hidePanelTableViewDetails1">
+			<div class="col-12">
+				<form class="form-inline w-100">
+
+					<div class="form-group my-2">
+						<label for="col0_filter">Country</label>
+						<div class="col-md-3 mr-5" id="filter_col1" data-column="0">
+							<input type="text" class="form-control column_filter" id="col0_filter" placeholder="search">
+						</div>
+					</div>
+					
+					<div class="form-group my-2">
+						<label for="store">Operator</label>
+						<div class="col-md-3 mr-5 " id="filter_col2" data-column="1">
+							<input type="text" class="form-control column_filter" id="col1_filter" placeholder="search">
+						</div>
+					</div>
+					<button class="btn btn-secondary p-1 ml-auto"><i class="fas fa-save mr-2"></i>Save All Rows</button>
+
+
+				</form>
+			<table id="tableViewDetails1" class="table table-striped table-bordered text-center" style="width:100%">
+	      <thead>
+	          <tr>
+	              <th>Country</th>
+	              <th>Operator</th>
+	              <th>Type</th>
+	              <th>Min Value</th>
+	              <th>Max Value</th>
+	              <th>Denominations</th>
+	              <th>Your Commission%</th>
+	              <th>Distributor 
+	              	Discount%<input type="text" class="w-25 mr-2"><a href="">Set</a></th>
+	              <th><input type="checkbox" name="">Active</th>
+	          </tr>
+	      </thead>
+	      <tbody>
+	          <tr>
+	              <td>Tiger Nixon</td>
+	              <td>System Architect</td>
+	              <td>Edinburgh</td>
+	              <td>61</td>
+	              <td>454</td>
+	              <td>$320,800</td>
+	              <td>61</td>
+	              <td><input type="text" value="0.00" class="text-center"></td>
+	              <td><input type="checkbox" name="">Active</td>
+	          </tr>
+	          <tr>
+	              <td>Garrett Winters</td>
+	              <td>Accountant</td>
+	              <td>Tokyo</td>
+	              <td>63</td>
+	              <td>454</td>
+	              <td>$170,750</td>
+	              <td>61</td>
+	              <td><input type="text" value="0.00" class="text-center"></td>
+	              <td><input type="checkbox" name="">Active</td>
+	          </tr>
+	          <tr>
+	              <td>Charde Marshall</td>
+	              <td>Regional Director</td>
+	              <td>San Francisco</td>
+	              <td>36</td>
+	              <td>454</td>
+	              <td>$470,600</td>
+	              <td>61</td>
+	              <td><input type="text" value="0.00" class="text-center"></td>
+	              <td><input type="checkbox" name="">Active</td>
+	          </tr>    
+	          <tr>
+	              <td>Caesar Vance</td>
+	              <td>Pre-Sales Support</td>
+	              <td>New York</td>
+	              <td>21</td>
+	              <td>454</td>
+	              <td>$106,450</td>
+	              <td>61</td>
+	              <td><input type="text" value="0.00" class="text-center"></td>
+	              <td><input type="checkbox" name="">Active</td>
+	          </tr>
+	      </tbody>
+
+	    </table>
+    	</div>
+		</div>
 	</main>
-
-
-
-
-
 
 
 
@@ -174,6 +260,9 @@
 <script src="./dist/js/bootstrap-tagsinput.min.js"></script>
 <script src="./dist/js/bootstrap-editable.min.js"></script>
 <script src="./dist/js/scripts.js"></script>
+
+<script type="text/javascript" src="./dist/DataTables/datatables.min.js"></script>
+<script type="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
 
 <script>
   $(function () {
@@ -197,49 +286,76 @@
 		$('#tableDiscountPlanForStore tbody').append('<tr><td><a href=""><i class="fas fa-sitemap d-block"></i>View Details</a></td><td><input type="text"></td><td><input type="checkbox"></td><td><a href=""><i class="fas fa-save mr-2"></i></a><a href=""><i class="fas fa-trash-alt"></i></a></td></tr>');
 	})
 
-/*
-	$('#editRow1').click(function() {
-		var text = $('input').val();
-		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').text(text);
-	})
-*/
-/*	$('#editRow1').click(function() {
-		var text = $('input').val();
-		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').text(text);
-	})*/
-	// добавить input
-/*	$('#editRow1').click(function() {
-		// $('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').attr('contenteditable','true').addClass('bg-info');
-		$('#tableDiscountPlanForStore .table-row-1 td:nth-child(2)').append('<input type="text">');
-	})
-*/
 </script>
-<!-- btnAddToUpDiscountPlanForStore -->
+
+	<!-- table -->
+	<script>
+		$(document).ready( function () {
+	    $('#tableViewDetails1').DataTable();
+	} );
+	</script>
+	<!-- скрывать/показывать таблицу по клику -->
+	<script>
+		$('#viewDetailsRow1').click(function() {
+		if($('#hidePanelTableViewDetails1').hasClass('d-none')) {
+			$('#hidePanelTableViewDetails1').removeClass('d-none');
+		} else {
+			$('#hidePanelTableViewDetails1').addClass('d-none');
+		}
+	})
+	</script>
+<!-- 	Disable search by default
+<script>
+	$.extend( $.fn.dataTable.defaults, {
+	    searching: false
+	} );
+</script> -->
+	<!-- show entries убарть -->
+	<script>
+		$('#tableViewDetails1').dataTable( {
+		  "lengthChange": false
+		} );
+	</script>
+
+	<script>
+
+		// function filterGlobal () {
+		    // $('#storeManagement').DataTable().search(
+		        // $('#global_filter').val(),
+		        // $('#global_regex').prop('checked'),
+		        // $('#global_smart').prop('checked')
+		    // ).draw();
+		// }
+		
+		// прячем стандартное поле search 
+		$(".dataTables_filter").hide();
+
+
+		function filterColumn ( i ) {
+		    $('#tableViewDetails1').DataTable().column( i ).search(
+		        $('#col'+i+'_filter').val(),
+/*		        $('#col'+i+'_regex').prop('checked'),
+		        $('#col'+i+'_smart').prop('checked')*/
+		    ).draw();
+		}
+		 
+		$(document).ready(function() {
+		    $('#tableViewDetails1').DataTable();
+		 
+		    $('input.global_filter').on( 'keyup click', function () {
+		        filterGlobal();
+		    } );
+		 
+		    $('input.column_filter').on( 'keyup click', function () {
+		        filterColumn( $(this).parents('div').attr('data-column') );
+		    } );
+		} );
+	</script>
+
+
+
+
+
 
   </body>
 </html>
-
-<!-- 
-				<table id="myTable" class="table table-striped table-bordered text-center">
-
-				  <thead>
-				    <tr class="table-secondary">
-				      <th>head</th>
-				      <th>head</th>
-				      <th>head</th>
-				      <th>head</th>
-				    </tr>
-				  </thead>
-
-				  <tbody>
-				    <tr>
-				    	<td><a href=""><i class="fas fa-map d-block"></i>View Details</a></td>
-				      <td>edit this text 1</td>
-				      <td>some text</td>
-				      <td>
-				      	<a href=""><i class="fas fa-edit mr-2"></i></a>
-				      </td>
-				    </tr>
-				  </tbody>
-
-				</table> -->
