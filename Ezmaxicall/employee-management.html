@@ -78,7 +78,7 @@
 		<div class="row">
 
 			<div class="col-auto mb-3 ml-auto">
-				<button id="btnAddEmployee" class="btn btn-secondary rounded float-right"><i class="fas fa-plus-circle mr-2"></i>Add Employee</button>
+				<button id="btnAddEmployee" class="btn btn-secondary rounded float-right" data-count='1'><i class="fas fa-plus-circle mr-2"></i>Add Employee</button>
 			</div>
 
 			<div class="col-12">
@@ -95,10 +95,10 @@
 				  <tbody>
 
 				    <tr>
-				      <td><input id="userID" class="border-0 bg-none" type="text" value="name user" disabled></td>
-				      <td><input id="userPassword" class="border-0 bg-none" type="password" value="1234abcd" disabled></td>
+				      <td><input id="userID" data-index="0" class="user__id border-0 bg-none" type="text" value="name user" disabled></td>
+				      <td><input id="userPasswordID" data-index="0" class="user__password border-0 bg-none" type="password" value="1234abcd" disabled></td>
 				      <td>
-				      	<a id="editUserAndPassword" href="#"><i class="fas fa-edit mr-2"></i></a>
+				      	<a id="editUserAndPasswordID" data-index="0" class="user__edit " href="#"><i class="fas fa-edit mr-2"></i></a>
 				      </td>
 				    </tr>
 				  </tbody>
@@ -142,27 +142,40 @@
   })
 </script>
 
+<!-- 	var count = 1;
+$('#btnAddEmployee').click(function() {
+	var userID = 'userID' + count;
+	var userPasswordID = 'userPasswordID' + count;
+	var editUserAndPasswordID = 'editUserAndPasswordID' + count;
+	var dataIndex = count;
+	$('#tableEmloyeeManagement tbody').append(`<tr><td><input id="${userID}" data-index="${dataIndex}" class="border-0 bg-none" type="text" value="name user" disabled></td><td><input id="${userPasswordID}" data-index="${dataIndex}" class="border-0 bg-none" type="password" value="1234abcd" disabled></td><td><a id="${editUserAndPasswordID}" data-index="${dataIndex}" href="#"><i class="fas fa-edit mr-2"></i></a></td></tr>`);
+	count++;
+}) -->
 <script>
-	$('#btnAddEmployee').click(function() {
-		$('#tableEmloyeeManagement tbody').append('<tr><td><input id="userID" class="border-0 bg-none" type="text" value="name user" disabled></td><td><input id="userPassword" class="border-0 bg-none" type="password" value="1234abcd" disabled></td><td><a id="editUserAndPassword" href="#"><i class="fas fa-edit mr-2"></i></a></td></tr>');
-	})
+	var body = $('body');
+  $('#btnAddEmployee').click(function() {
+	var count = parseInt($(this).attr('data-count'));
+	$('#tableEmloyeeManagement tbody').append(`<tr><td><input id="userID`+count+`" data-index="0" class="user__id border-0 bg-none" type="text" value="name user" disabled></td><td><input id="userPasswordID`+count+`" data-index="0" class="user__password border-0 bg-none" type="password" value="1234abcd" disabled></td><td><a id="editUserAndPasswordID" data-index="0" class="user__edit " href="#"><i class="fas fa-edit mr-2"></i></a></td></tr>`);
+	$(this).attr('data-count', count+1);
+	});
 	
-
-	$('#editUserAndPassword').click(function() {
-
+	body.on('click', '#editUserAndPasswordID', function() {
+ 		var item = $(this).parent().parent();
+  	var inputId = item.find('.user__id');
+    var inputPassword = item.find('.user__password');
 		// вкл/выкл border
-		if($('#userID').hasClass('border-0') && $('#userPassword').hasClass('border-0')) {
-			$('#userID').toggleClass('border-0');
-			$('#userPassword').toggleClass('border-0');
+		if(inputId.hasClass('border-0') && inputPassword.hasClass('border-0')) {
+			inputId.toggleClass('border-0');
+			inputPassword.toggleClass('border-0');
 		}		
 		// вкл/выкл фон
-		if($('#userID').hasClass('bg-none') && $('#userPassword').hasClass('bg-none')) {
-			$('#userID').toggleClass('bg-none');
-			$('#userPassword').toggleClass('bg-none');
+		if(inputId.hasClass('bg-none') && inputPassword.hasClass('bg-none')) {
+			inputId.toggleClass('bg-none');
+			inputPassword.toggleClass('bg-none');
 		}
 		// выкл disabled
-		$('#userID').prop('disabled', false);
-		$('#userPassword').prop('disabled', false);
+		inputId.prop('disabled', false);
+		inputPassword.prop('disabled', false);
 
 		// спрятать btnPanel
 		if( $('#btnPanel').hasClass('d-none')) {
@@ -170,39 +183,60 @@
 		}
 	})
 
-	$('#btnSave').click(function() {
-
+	body.on('click', '#btnSave', function() {
+ 		var item = $(this).parent().parent();
+  	var inputId = item.find('.user__id');
+    var inputPassword = item.find('.user__password');
 		// вкл/выкл border
-		if(!$('#userID').hasClass('border-0') && !$('#userPassword').hasClass('border-0')) {
-			$('#userID').toggleClass('border-0');
-			$('#userPassword').toggleClass('border-0');
+		if(!inputId.hasClass('border-0') && !inputPassword.hasClass('border-0')) {
+			inputId.toggleClass('border-0');
+			inputPassword.toggleClass('border-0');
 		}
 		// выкл disabled
-		$('#userID').prop('disabled', true);
-		$('#userPassword').prop('disabled', true);
+		inputId.prop('disabled', true);
+		inputPassword.prop('disabled', true);
 		// спрятать btnPanel
 		if(!$('#btnPanel').hasClass('d-none')) {
 			$('#btnPanel').toggleClass('d-none');
 		}
 	})
 
-	$('#btnCancel').click(function() {
-		
+	body.on('click', '#btnCancel', function() {
+ 		var item = $(this).parent().parent();
+  	var inputId = item.find('.user__id');
+    var inputPassword = item.find('.user__password');
 		// вкл/выкл border
-		if(!$('#userID').hasClass('border-0') && !$('#userPassword').hasClass('border-0')) {
-			$('#userID').toggleClass('border-0');
-			$('#userPassword').toggleClass('border-0');
+		if(!inputId.hasClass('border-0') && !inputPassword.hasClass('border-0')) {
+			inputId.toggleClass('border-0');
+			inputPassword.toggleClass('border-0');
 		}
-		// выкл disabled		
-		$('#userID').prop('disabled', true);
-		$('#userPassword').prop('disabled', true);
+		// выкл disabled
+		inputId.prop('disabled', true);
+		inputPassword.prop('disabled', true);
 		// спрятать btnPanel
 		if(!$('#btnPanel').hasClass('d-none')) {
 			$('#btnPanel').toggleClass('d-none');
 		}
 	})
+
+
 	// $('#btnCancel').click(function() {
+		
+	// 	// вкл/выкл border
+	// 	if(!$('#userID').hasClass('border-0') && !$('#userPasswordID').hasClass('border-0')) {
+	// 		$('#userID').toggleClass('border-0');
+	// 		$('#userPasswordID').toggleClass('border-0');
+	// 	}
+	// 	// выкл disabled		
+	// 	$('#userID').prop('disabled', true);
+	// 	$('#userPasswordID').prop('disabled', true);
+	// 	// спрятать btnPanel
+	// 	if(!$('#btnPanel').hasClass('d-none')) {
+	// 		$('#btnPanel').toggleClass('d-none');
+	// 	}
 	// })
+
+	
 </script>
 
 
