@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./dist/bootstrap-4.3.1/css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="dist/DataTables/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="dist/DataTables/Buttons-1.5.6/css/buttons.dataTables.min.css">
  
 	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
@@ -92,14 +93,6 @@
 						</div>
 					</div>
 					
-					<div class="dropdown mr-3">
-					  <button class="btn btn-secondary dropdown-toggle py-1 rounded" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-save"></i></button>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					  	<button class="dropdown-item border-bottom">excel</button>
-					  	<button class="dropdown-item border-bottom">fff</button>
-							<button class="dropdown-item ">sss</button>
-					  </div>
-					</div>
 					<button class="btn btn-secondary py-1 rounded"><i class="fas fa-sync-alt"></i></button>
 				
 				</form>
@@ -169,11 +162,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	-->
 <!-- <script src="./dist/popper/popper.min.js"></script> -->
-<script src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-<script src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
 
 <script type="text/javascript" src="./dist/DataTables/datatables.min.js"></script>
-<script type="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript" src="dist/DataTables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="dist/DataTables/Buttons-1.5.6/js/buttons.flash.min.js"></script>
+<script type="text/javascript" src="dist/DataTables/jszip.min.js"></script>
+<script type="text/javascript" src="dist/DataTables/pdfmake.min.js"></script>
+<script type="text/javascript" src="dist/DataTables/vfs_fonts.js"></script>
+<script type="text/javascript" src="dist/DataTables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="dist/DataTables/Buttons-1.5.6/js/buttons.print.min.js"></script>
 		
 
 	<!-- navbar -->
@@ -198,36 +199,36 @@
 	    $('#tableTransaction').DataTable();
 	} );
 	</script>
-<!-- 	Disable search by default
-<script>
-	$.extend( $.fn.dataTable.defaults, {
-	    searching: false
-	} );
-</script> -->
 	<!-- show entries убарть -->
 	<script>
 		$('#tableTransaction').dataTable( {
-		  "lengthChange": false
+		  "lengthChange": false,
+        dom: 'Bfrtip',
+			  buttons: [
+			      {
+			          extend: 'collection',
+			          text: 'Export',
+			          buttons: [ 'excel', 'pdf' ]
+			      }
+			  ]
 
 		} );
-	</script>
 
-	<script>
 
-function filterGlobal () {
-    $('#tableTransaction').DataTable().search(
-        $('#global_filter').val(),
-        // $('#global_regex').prop('checked'),
-        // $('#global_smart').prop('checked')
-    ).draw();
-}
+		function filterGlobal () {
+		    $('#tableTransaction').DataTable().search(
+		        $('#global_filter').val(),
+		        // $('#global_regex').prop('checked'),
+		        // $('#global_smart').prop('checked')
+		    ).draw();
+		}
 
-var table = $('#tableTransaction').DataTable();
- 
-// #myInput is a <input type="text"> element
-$('#globalSearch').on( 'keyup', function () {
-    table.search( this.value ).draw();
-} );
+		var table = $('#tableTransaction').DataTable();
+		 
+		// #myInput is a <input type="text"> element
+		$('#globalSearch').on( 'keyup', function () {
+		    table.search( this.value ).draw();
+		} );
 
 		
 		// прячем стандартное поле search 

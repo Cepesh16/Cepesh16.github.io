@@ -14,12 +14,14 @@
 	<link rel="stylesheet" type="text/css" href="dist/DataTables/dataTables.bootstrap4.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
-	<link rel="stylesheet" type="text/css" href="dist/css/input.css">
+	<!-- <link rel="stylesheet" type="text/css" href="dist/css/input.css"> -->
 	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+
+	<link rel="stylesheet" type="text/css" href="dist/bootstrap3-editable-1.5.1/css/bootstrap-editable.css">
 
 	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
 	
-  		<title>Store Payment</title>
+  		<title>TopUp Discoun for Store</title>
 	
 
   </head>
@@ -103,16 +105,17 @@
 				    		<a href="#" id="viewDetailsRow1"><i class="fas fa-sitemap d-block"></i>View Details</a>
 				    	</td>
 				      <td>
-		      	    <div class="account-info">
 									<div class="row justify-content-center">
-					            <div class="col-auto"><span id="company-name">Company name</span></div>
+					            <div class="col-auto">
+					            	<span id="cellName">Company name</span>
+					            </div>
 					        </div>
-					      </div>
 				      </td>
 				      <td>Topup Haiti 11%</td>
 				      <td>
-				      	<a href="#" class="change-company-name"><i class="fas fa-edit mr-2"></i></a>
-				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
+				      	<button id="editName" class="mr-2"><i class="fas fa-edit"></i></button>
+				      	<button id="saveName" class="mr-2 d-none"><i class="fas fa-save"></i></button>
+				      	<button data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
 				      </td>
 				    </tr>
 
@@ -257,12 +260,13 @@
 
 <script src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="./dist/js/bootstrap-tagsinput.min.js"></script>
-<script src="./dist/js/bootstrap-editable.min.js"></script>
+<!-- <script src="./dist/js/bootstrap-tagsinput.min.js"></script> -->
 <script src="./dist/js/scripts.js"></script>
 
 <script type="text/javascript" src="./dist/DataTables/datatables.min.js"></script>
 <script type="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
+
+<script src="./dist/bootstrap3-editable-1.5.1/js/bootstrap-editable.min.js"></script>
 
 <script>
   $(function () {
@@ -287,6 +291,28 @@
 	})
 
 </script>
+	<!-- редактировать Name -->
+	<script>
+		$(document).ready(function() {
+			var body = $('body');
+			$.fn.editable.defaults.mode = 'inline';
+			$.fn.editable.defaults.showbuttons = false;
+
+			// $('#cellName').editable();
+				body.on('click', '#editName', function(e) {
+					e.stopPropagation();
+					$('#cellName').editable('toggle');
+					$('#editName').addClass('d-none');
+					$('#saveName').removeClass('d-none');
+				})
+				body.on('click', '#saveName', function(e) {
+					$('#cellName').editable('toggle');
+					$('#editName').removeClass('d-none');
+					$('#saveName').addClass('d-none');
+
+				})
+			});
+	</script>
 
 	<!-- table -->
 	<script>
@@ -311,9 +337,11 @@
 	} );
 </script> -->
 	<!-- show entries убарть -->
+
+
 	<script>
 		$('#tableViewDetails1').dataTable( {
-		  "lengthChange": false
+		  "lengthChange": false,
 		} );
 	</script>
 
