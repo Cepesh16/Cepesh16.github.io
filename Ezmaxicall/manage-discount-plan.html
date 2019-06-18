@@ -114,8 +114,10 @@
 				      <td>Y</td>
 				      <td>
 				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
-				      	<button id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
-				      	<button data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
 				      </td>
 				    </tr>
 
@@ -307,8 +309,10 @@
 				      <td>Y</td>
 				      <td>
 				      	<button id="btnEditName`+count+`" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
-				      	<button id="btnSaveName`+count+`" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
-				      	<button data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button type="submit" id="btnSaveName`+count+`" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+				      	
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit d-none"><i class="fas fa-window-close"></i></button>
 				      </td>
 				    </tr>`);
 		$('.input__name').editable('toggle');
@@ -325,15 +329,60 @@
 			 		var inputName = item.find('.input__name')
 			  	var btnEditName = item.find('.btn__editName');
 			    var btnSaveName = item.find('.btn__saveName');
+			    var btnDeleteRow = item.find('.btn__deleteRow');
+			    var btnCancelEdit = item.find('.btn__cancelEdit');
+
 					inputName.editable('toggle');
 					btnEditName.addClass('d-none');
 					btnSaveName.removeClass('d-none');
-				})
-				body.on('click', '#btnSaveName', function(e) {
-					$('#inputName').editable('toggle');
-					$('#btnEditName').removeClass('d-none');
-					$('#btnSaveName').addClass('d-none');
 
+					btnDeleteRow.addClass('d-none');
+					btnCancelEdit.removeClass('d-none');
+
+				})
+				body.on('click', '.btn__saveName', function(e) {
+					e.stopPropagation();
+
+			 		var item = $(this).parent().parent();
+
+			 		var inputName = item.find('.input__name')
+			  	var btnEditName = item.find('.btn__editName');
+			    var btnSaveName = item.find('.btn__saveName');
+			    var btnDeleteRow = item.find('.btn__deleteRow');
+			    var btnCancelEdit = item.find('.btn__cancelEdit');
+					
+					inputName.editable('toggle');
+					btnEditName.removeClass('d-none');
+					btnSaveName.addClass('d-none');
+					btnDeleteRow.removeClass('d-none');
+					btnCancelEdit.addClass('d-none');
+
+				})
+
+				body.on('click', '.btn__cancelEdit', function(e) {
+					e.stopPropagation();
+	
+			 		var item = $(this).parent().parent();
+			 		var inputName = item.find('.input__name')
+			  	var btnEditName = item.find('.btn__editName');
+			    var btnSaveName = item.find('.btn__saveName');
+			    var btnDeleteRow = item.find('.btn__deleteRow');
+			    var btnCancelEdit = item.find('.btn__cancelEdit');
+			    inputName.editable(true);
+
+					inputName.editable('toggle');
+					btnEditName.removeClass('d-none');
+					btnSaveName.addClass('d-none');
+
+					btnDeleteRow.removeClass('d-none');
+					btnCancelEdit.addClass('d-none');
+				})
+				body.on('click', '.btn__deleteRow', function(e) {
+					e.stopPropagation();
+
+					var item = $(this);
+					item.closest('tr').remove();
+					// $('#tableDiscountPlanForStore tbody tr').remove();
 				})
 
 </script>
