@@ -83,7 +83,7 @@
 
 		<div class="row flex-row-reverse">
 			<div class="col-auto mb-3">
-				<button id="btnAddToUpDiscountPlanForStore" class="btn btn-secondary rounded float-right"><i class="fas fa-plus-circle mr-2"></i>Add TopUp Discount Plan for Store</button>
+				<button id="btnAddToUpDiscountPlanForStore" class="btn btn-secondary rounded float-right" data-count='1'><i class="fas fa-plus-circle mr-2"></i>Add TopUp Discount Plan for Store</button>
 			</div>
 
 			<div class="col-12">
@@ -102,24 +102,24 @@
 
 				    <tr>
 				    	<td>
-				    		<a href="#" id="viewDetailsRow1"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    		<a href="#" id="viewDetailsRowID"><i class="fas fa-sitemap d-block"></i>View Details</a>
 				    	</td>
 				      <td>
 									<div class="row justify-content-center">
 					            <div class="col-auto">
-					            	<span id="cellName">Company name</span>
+					            	<span id="inputName" class="input__name">Company name</span>
 					            </div>
 					        </div>
 				      </td>
-				      <td>Topup Haiti 11%</td>
+				      <td>Y</td>
 				      <td>
-				      	<button id="editName" class="mr-2"><i class="fas fa-edit"></i></button>
-				      	<button id="saveName" class="mr-2 d-none"><i class="fas fa-save"></i></button>
+				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
 				      	<button data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
 				      </td>
 				    </tr>
 
-				    <tr>
+<!-- 				    <tr>
 				    	<td><a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a></td>
 				      <td>
 		      	    <div class="account-info">
@@ -128,12 +128,12 @@
 					        </div>
 					      </div>
 					    </td>
-				      <td>Topup Haiti 11%</td>
+				      <td>N</td>
 				      <td>
 				      	<a href="#" class="change-company-name"><i class="fas fa-edit mr-2"></i></a>
 				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
 				      </td>
-				    </tr>
+				    </tr> -->
 				  </tbody>
 
 				</table>
@@ -286,31 +286,61 @@
 
 <!-- добавить строку в таблицу -->
 <script>
+	var body = $('body');
+	$.fn.editable.defaults.mode = 'inline';
+	$.fn.editable.defaults.showbuttons = false;
+
 	$('#btnAddToUpDiscountPlanForStore').click(function() {
-		$('#tableDiscountPlanForStore tbody').append('<tr><td><a href=""><i class="fas fa-sitemap d-block"></i>View Details</a></td><td><input type="text"></td><td><input type="checkbox"></td><td><a href=""><i class="fas fa-save mr-2"></i></a><a href="" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a></td></tr>');
-	})
+
+		var count = parseInt($(this).attr('data-count'));
+		$('#tableDiscountPlanForStore tbody').append(`				    <tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID`+count+`"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<span id="inputName`+count+`" class="input__name"></span>
+					            </div>
+					        </div>
+				      </td>
+				      <td>Y</td>
+				      <td>
+				      	<button id="btnEditName`+count+`" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button id="btnSaveName`+count+`" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+				      	<button data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      </td>
+				    </tr>`);
+		$('.input__name').editable('toggle');
+		// $('.input__name').show();
+			$(this).attr('data-count', count+1);
+	});
+
+
+			// $('#inputName').editable();
+				body.on('click', '.btn__editName', function(e) {
+					e.stopPropagation();
+					
+			 		var item = $(this).parent().parent();
+			 		var inputName = item.find('.input__name')
+			  	var btnEditName = item.find('.btn__editName');
+			    var btnSaveName = item.find('.btn__saveName');
+					inputName.editable('toggle');
+					btnEditName.addClass('d-none');
+					btnSaveName.removeClass('d-none');
+				})
+				body.on('click', '#btnSaveName', function(e) {
+					$('#inputName').editable('toggle');
+					$('#btnEditName').removeClass('d-none');
+					$('#btnSaveName').addClass('d-none');
+
+				})
 
 </script>
 	<!-- редактировать Name -->
 	<script>
 		$(document).ready(function() {
-			var body = $('body');
-			$.fn.editable.defaults.mode = 'inline';
-			$.fn.editable.defaults.showbuttons = false;
 
-			// $('#cellName').editable();
-				body.on('click', '#editName', function(e) {
-					e.stopPropagation();
-					$('#cellName').editable('toggle');
-					$('#editName').addClass('d-none');
-					$('#saveName').removeClass('d-none');
-				})
-				body.on('click', '#saveName', function(e) {
-					$('#cellName').editable('toggle');
-					$('#editName').removeClass('d-none');
-					$('#saveName').addClass('d-none');
-
-				})
 			});
 	</script>
 
@@ -322,7 +352,7 @@
 	</script>
 	<!-- скрывать/показывать таблицу по клику -->
 	<script>
-		$('#viewDetailsRow1').click(function() {
+		$('#viewDetailsRowID').click(function() {
 		if($('#hidePanelTableViewDetails1').hasClass('d-none')) {
 			$('#hidePanelTableViewDetails1').removeClass('d-none');
 		} else {
