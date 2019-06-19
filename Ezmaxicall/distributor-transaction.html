@@ -13,14 +13,17 @@
 
 	<link rel="stylesheet" type="text/css" href="dist/DataTables/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="dist/DataTables/Buttons-1.5.6/css/buttons.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="dist/DataTables/jquery.dataTables.min.css">
  
 	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="dist/datepicker/css/datepicker.css">
-
 	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
+
 	
+  <!-- <link href="dist/bootstrap-datapicker-gijgo/gijgo.min.css" rel="stylesheet" type="text/css" /> -->
+	<link rel="stylesheet" type="text/css" href="dist/bootstrap-datepicker-1.9.0/datepicker.css">
+
   		<title>Distributor Transactions</title>
 	
 
@@ -85,50 +88,36 @@
 			
 			<h5 class="panel text-center text-uppercase font-weight-bold py-3 mb-0 bg-secondary text-light">Distributor Transactions</h5>
 
-			<div class="row bg-white border px-3 mx-0 justify-content-between">
-				<form class="form-inline w-100">
-					
-					
+			<div class="row bg-white border px-3 py-2 mx-0 justify-content-between">
+				<div class="col-6">
 					<!-- DATAPICKER -->
-					<div class="input-daterange input-group" id="datepicker">
-					    <input type="text" class="input-sm form-control" name="from" placeholder="From date"/>
-					    <span class="input-group-addon">to</span>
-					    <input type="text" class="input-sm form-control" name="to" placeholder="To date"/>
-					</div>
-					
-					<div class="form-group my-2">
-						<label for="globalSearch">Find</label>
-						<div class="col-md-3 mr-5 " id="filter_col2" data-column="1">
-							<input type="text" class="form-control column_filter" id="globalSearch" placeholder="search">
-						</div>
-					</div>
+					    <!-- <input id="datepicker" width="276"> -->
+					  <div class="input-group-sm">
+					  	<label class="mr-3">Activity Date</label>
+					  	<input id="datepickerFrom" class="datepicker p-0 mr-2" style="width:120px" type="text" disabled>
+					  		<button class="btn btn-primary p-0 px-2 mr-2" type="button"><i id="iconDatePickerFrom" class="fas fa-calendar fa-lg"></i></button>
+					  	<input id="datepickerTo" class="datepicker p-0 mr-2" style="width:120px" type="text" disabled>
+					  		<button class="btn btn-primary p-0 px-2 mr-2" type="button"><i id="iconDatePickerTo" class="fas fa-calendar fa-lg"></i></button>
+					  </div>
+				</div>
 
-					<div class="form-group my-2">
+				<div class="col">
+					<div class="my-2">
 						<label for="col0_filter">Activity Type</label>
-						<div class="col-md-3 mr-5" id="filter_col1" data-column="0">
 							<select id="selectActivityType">
 								<option>type 1</option>
 								<option>another type</option>
 								<option>32393</option>
 								<option>morty</option>
 							</select>
-							<!-- <input type="text" class="form-control column_filter" id="col0_filter"> -->
-						</div>
 					</div>
-					
-<!-- 					<div class="dropdown mr-3">
-  <button class="btn btn-secondary dropdown-toggle py-1 rounded" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-save"></i></button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  	<button class="dropdown-item border-bottom">excel</button>
-  	<button class="dropdown-item border-bottom">fff</button>
-		<button class="dropdown-item ">sss</button>
-  </div>
-</div> -->
+				</div>
 
-					<button class="btn btn-secondary py-1 rounded"><i class="fas fa-sync-alt"></i></button>
+				<div class="col">
+					<button class="btn btn-secondary py-1 rounded mr-3"><i class="fas fa-sync-alt"></i></button>
+					<button class="btn btn-secondary py-1 rounded"><i class="fas fa-search mr-2">Search</i></button>
+				</div>
 
-
-				</form>
 			</div>
 		</div>
 		
@@ -164,6 +153,391 @@
               <td>Edinburgh</td>
           </tr>
           <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
+          		<td>54403</td>
+              <td>2011/07/25</td>
+              <td>Garrett Winters</td>
+              <td>63</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Accoun</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>Tokyo</td>
+          </tr>
+          <tr>
+          		<td>54403</td>
+              <td>2008/10/16</td>
+              <td>Charde Marshall</td>
+              <td>36</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Region Director</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>San Francisco</td>
+          </tr>    
+          <tr>
+          		<td>54403</td>
+              <td>2011/12/12</td>
+              <td>Caesar Vance</td>
+              <td>21</td>
+              <td>1.2</td>
+              <td>61</td>
+              <td>Pre-Sa Support</td>
+              <td>2011/04/25</td>
+              <td>834</td>
+              <td>New York</td>
+          </tr>          <tr>
           		<td>54403</td>
               <td>2011/07/25</td>
               <td>Garrett Winters</td>
@@ -241,9 +615,12 @@
 <script type="text/javascript" src="dist/DataTables/vfs_fonts.js"></script>
 <script type="text/javascript" src="dist/DataTables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="dist/DataTables/Buttons-1.5.6/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="dist/DataTables/pagination/input.js"></script>
 
-<script type="text/javascript" src="dist/datepicker/js/bootstrap-datepicker.js"></script>
-		
+<!-- <script src="dist/bootstrap-datapicker-gijgo/gijgo.min.js" type="text/javascript"></script>		 -->
+<script type="text/javascript" src="dist/bootstrap-datepicker-1.9.0/bootstrap-datepicker.js"></script>
+
+
 
 	<!-- navbar -->
 	<script>
@@ -271,7 +648,11 @@
 	<script>
 		$('#tableTransaction').dataTable( {
 		  "lengthChange": false,
-        dom: 'Bfrtip',
+		  "pagingType": 'input',
+        dom: `<"row align-items-end"<"col"p>
+        <"col"<>f><"col"B>>
+        <"toolbar">
+        rti`,
 			  buttons: [
 			      {
 			          extend: 'collection',
@@ -279,11 +660,28 @@
 			          buttons: [ 'excel', 'pdf' ]
 			      }
 			  ]
+		});
 
-		} );
+		$("div.toolbar").html(`
+			<div class="row">
+				<div class="col-12 text-center mb-3">
+					<h4 class="font-weight-bold">Distributor Transaction</h4>
+				</div>
+				<div class="col-4">
+					<span>Activity Date:</span><span>6/12/2019 To 6/19/2019</span>
+				</div>
+				<div class="col-4">
+					<span>Activity Type:</span><span>All</span>
+				</div>
+				<div class="col-12">
+					<span>Dist Code:</span><span>ezmaxi</span>
+				</div>
+			</div>			`);
 
 
-		function filterGlobal () {
+
+
+/*		function filterGlobal () {
 		    $('#tableTransaction').DataTable().search(
 		        $('#global_filter').val(),
 		        // $('#global_regex').prop('checked'),
@@ -296,22 +694,22 @@
 		// #myInput is a <input type="text"> element
 		$('#globalSearch').on( 'keyup', function () {
 		    table.search( this.value ).draw();
-		} );
+		} );*/
 
 		
 		// прячем стандартное поле search 
-		$(".dataTables_filter").hide();
+		// $(".dataTables_filter").hide();
 
 
-		function filterColumn ( i ) {
+/*		function filterColumn ( i ) {
 		    $('#tableTransaction').DataTable().column( i ).search(
 		        $('#col'+i+'_filter').val(),
-/*		        $('#col'+i+'_regex').prop('checked'),
-		        $('#col'+i+'_smart').prop('checked')*/
+		        // $('#col'+i+'_regex').prop('checked'),
+		        // $('#col'+i+'_smart').prop('checked')
 		    ).draw();
-		}
+		}*/
 		 
-		$(document).ready(function() {
+/*		$(document).ready(function() {
 		    $('#tableTransaction').DataTable();
 		 
 		    // $('input.global_filter').on( 'keyup click', function () {
@@ -321,14 +719,30 @@
 		    $('input.column_filter').on( 'keyup click', function () {
 		        filterColumn( $(this).parents('div').attr('data-column') );
 		    } );
-		} );
+		} );*/
 	</script>
 
 	<script>
+    // $('#datepicker').datepicker({
+        // uiLibrary: 'bootstrap4'
+    // });
+
+		// $('.datepicker').datepicker()
 		// $('.datepicker').datepicker();
-		$('.input-daterange').datepicker({
-    autoclose: true
-});
+		// $( "#date_ex" ).datepicker();
+		var body = $('body');
+		var picker1 = $('#datepickerFrom').datepicker();
+		var picker2 = $('#datepickerTo').datepicker();
+		
+		body.on('click', '#iconDatePickerFrom', function() {
+			picker1.datepicker('show');
+
+		})
+		body.on('click', '#iconDatePickerTo', function() {
+			picker2.datepicker('show');
+
+		})
+		
 	</script>
 
   </body>
