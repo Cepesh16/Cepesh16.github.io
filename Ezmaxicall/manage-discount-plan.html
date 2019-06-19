@@ -108,11 +108,11 @@
 				      <td>
 									<div class="row justify-content-center">
 					            <div class="col-auto">
-					            	<span id="inputName" class="input__name">Top discount name</span>
+					            	<input id="inputName" class="input__name border-0 bg-transparent" type="text" data-saved='yes'  value="Top discount name" disabled></input>
 					            </div>
 					        </div>
 				      </td>
-				      <td>Y</td>
+				      <td><input type="checkbox" class="input__checkbox" checked disabled></td>
 				      <td>
 				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
 				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
@@ -121,22 +121,6 @@
 				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
 				      </td>
 				    </tr>
-
-<!-- 				    <tr>
-				    	<td><a href="#"><i class="fas fa-sitemap d-block"></i>View Details</a></td>
-				      <td>
-		      	    <div class="account-info">
-									<div class="row justify-content-center">
-					            <div class="col-auto"><span id="company-name">Company name</span></div>
-					        </div>
-					      </div>
-					    </td>
-				      <td>N</td>
-				      <td>
-				      	<a href="#" class="change-company-name"><i class="fas fa-edit mr-2"></i></a>
-				      	<a href="#" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></a>
-				      </td>
-				    </tr> -->
 				  </tbody>
 
 				</table>
@@ -146,7 +130,7 @@
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title text-uppercase font-weight-bold" id="deleteRowModal">Delete row</h5>
+				        <h5 class="modal-title text-uppercase font-weight-bold">Delete row</h5>
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
@@ -207,7 +191,7 @@
 		              <th>Max Value</th>
 		              <th>Denominations</th>
 		              <th>Your Commission%</th>
-		              <th>Distributor Discount%<input id="inputAllDiscount" type="text" class="w-25 mr-2"><button id="btnSetAllInputDiscount">Set</button></th>
+		              <th>Distributor Discount%<br><input id="inputAllDiscount" type="text" class="w-25 mr-2"><button id="btnSetAllInputDiscount">Set</button></th>
 		              <th><input id="selectAllActive" type="checkbox">Active</th>
 		          </tr>
 		      </thead>
@@ -269,12 +253,12 @@
 <script src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
 <!-- <script src="./dist/js/bootstrap-tagsinput.min.js"></script> -->
-<script src="./dist/js/scripts.js"></script>
+<!-- <script src="./dist/js/scripts.js"></script> -->
 
 <script type="text/javascript" src="./dist/DataTables/datatables.min.js"></script>
 <script type="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
 
-<script src="./dist/bootstrap3-editable-1.5.1/js/bootstrap-editable.min.js"></script>
+<!-- <script src="./dist/bootstrap3-editable-1.5.1/js/bootstrap-editable.min.js"></script> -->
 <!-- <script type="text/javascript" src="dist/DataTables/select/dataTables.select.min.js"></script> -->
 <!-- <script type="text/javascript" src="dist/DataTables/select/gyrocode/dataTables.checkboxes.min.js"></script> -->
 
@@ -297,8 +281,8 @@
 <!-- добавить строку в таблицу -->
 <script>
 	var body = $('body');
-	$.fn.editable.defaults.mode = 'inline';
-	$.fn.editable.defaults.showbuttons = false;
+	// $.fn.editable.defaults.mode = 'inline';
+	// $.fn.editable.defaults.showbuttons = false;
 
 	$('#btnAddToUpDiscountPlanForStore').click(function() {
 
@@ -310,39 +294,42 @@
 				      <td>
 									<div class="row justify-content-center">
 					            <div class="col-auto">
-					            	<span id="inputName`+count+`" class="input__name"></span>
+					            	<input id="inputName`+count+`" class="input__name" type="text" data-saved='no' value="Top discount name"></input>
 					            </div>
 					        </div>
 				      </td>
-				      <td>Y</td>
+				      <td><input type="checkbox" class="input__checkbox"></td>
 				      <td>
-				      	<button id="btnEditName`+count+`" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
-				      	<button type="submit" id="btnSaveName`+count+`" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+				      	<button id="btnEditName`+count+`" class="btn__editName d-none mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName`+count+`" class="btn__saveName mr-2"><i class="fas fa-save"></i></button>
 				      	
 				      	<button id="btnDeleteRow" class="btn__deleteRow d-none" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
 				      	<button id="btnCancelEdit" class="btn__cancelEdit"><i class="fas fa-window-close"></i></button>
 				      </td>
 				    </tr>`);
 
-		$('.input__name').editable(true);
-		$('#inputName.input__name').editable(false);
-		// $('.input__name').show();
 			$(this).attr('data-count', count+1);
 	});
 
+				var inputNameValueSave;
+				// var inputCheckboxSave;
 
-			// $('#inputName').editable();
 				body.on('click', '.btn__editName', function(e) {
 					e.stopPropagation();
+				  var item = $(this).parent().parent();
+ 					var inputName = item.find('.input__name');
 					
-			 		var item = $(this).parent().parent();
-			 		var inputName = item.find('.input__name')
 			  	var btnEditName = item.find('.btn__editName');
 			    var btnSaveName = item.find('.btn__saveName');
 			    var btnDeleteRow = item.find('.btn__deleteRow');
 			    var btnCancelEdit = item.find('.btn__cancelEdit');
 
-					inputName.editable(true);
+			    inputNameValueSave = inputName.val();
+
+				  inputName.prop('disabled', false);
+  				inputName.focus();
+
+  				inputName.removeClass('bg-transparent');
 					btnEditName.addClass('d-none');
 					btnSaveName.removeClass('d-none');
 
@@ -351,22 +338,33 @@
 
 				})
 				body.on('click', '.btn__saveName', function(e) {
-					e.stopPropagation();
+					e.stopPropagation(); 
 
-			 		var item = $(this).parent().parent();
+				  var item = $(this).parent().parent();
+ 					var inputName = item.find('.input__name');
+ 					var inputCheckbox = item.find('.input__checkbox');
 
-			 		var inputName = item.find('.input__name')
 			  	var btnEditName = item.find('.btn__editName');
 			    var btnSaveName = item.find('.btn__saveName');
 			    var btnDeleteRow = item.find('.btn__deleteRow');
 			    var btnCancelEdit = item.find('.btn__cancelEdit');
-					
-					inputName.editable(false);
+
+			    inputName.attr('data-saved', 'yes');
+			    inputCheckbox.attr('disabled', true);
+
+
 					btnEditName.removeClass('d-none');
 					btnSaveName.addClass('d-none');
 					btnDeleteRow.removeClass('d-none');
 					btnCancelEdit.addClass('d-none');
 
+  				inputName.addClass('bg-transparent');
+  				inputName.addClass('border-0');
+
+ 					var inputNameValue = inputName.val();
+
+ 					inputName.val(inputNameValue);
+				  inputName.prop('disabled', true);
 				})
 
 				body.on('click', '.btn__cancelEdit', function(e) {
@@ -379,7 +377,14 @@
 			    var btnDeleteRow = item.find('.btn__deleteRow');
 			    var btnCancelEdit = item.find('.btn__cancelEdit');
 
-			    inputName.editable(false);
+			    if (inputName.attr('data-saved') === 'no') {
+						item.closest('tr').remove();
+			    }
+
+			    inputName.val(inputNameValueSave);
+
+				  inputName.prop('disabled', true);
+				  inputName.addClass('bg-transparent');
 
 					btnEditName.removeClass('d-none');
 					btnSaveName.addClass('d-none');
@@ -387,13 +392,17 @@
 					btnDeleteRow.removeClass('d-none');
 					btnCancelEdit.addClass('d-none');
 				})
-				body.on('click', '.btn__deleteRow', function(e) {
-					e.stopPropagation();
 
-					var item = $(this);
-					item.closest('tr').remove();
-					// $('#tableDiscountPlanForStore tbody tr').remove();
-				})
+				// body.on('click', '.btn__deleteRow', function(e) {
+				// 	e.stopPropagation();
+
+				// 	var item = $(this);
+
+				// 	item.closest('tr').remove();
+				// 	// $('#tableDiscountPlanForStore tbody tr').remove();
+				// })
+
+
 
 </script>
 
