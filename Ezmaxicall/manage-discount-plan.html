@@ -9,18 +9,14 @@
     <!--
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	-->
-	<link rel="stylesheet" href="./dist/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="dist/DataTables/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/dist/DataTables/dataTables.bootstrap4.min.css">
 	
-	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
-	<!-- <link rel="stylesheet" type="text/css" href="dist/css/input.css"> -->
-	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="dist/bootstrap3-editable-1.5.1/css/bootstrap-editable.css">
-	<!-- <link rel="stylesheet" type="text/css" href="dist/DataTables/select/select.dataTables.min.css"> -->
-
-	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
+	<link href="./assets/dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
 	
   		<title>TopUp Discoun for Store</title>
 	
@@ -84,7 +80,7 @@
 
 		<div class="row flex-row-reverse">
 			<div class="col-auto mb-3">
-				<button id="btnAddToUpDiscountPlanForStore" class="btn btn-secondary rounded float-right" data-count='1'><i class="fas fa-plus-circle mr-2"></i>Add TopUp Discount Plan for Store</button>
+				<button id="btnAddToUpDiscountPlanForStore" class="btn btn-secondary rounded float-right" data-count='3'><i class="fas fa-plus-circle mr-2"></i>Add TopUp Discount Plan for Store</button>
 			</div>
 
 			<div class="col-12">
@@ -100,6 +96,48 @@
 				  </thead>
 
 				  <tbody>
+
+				    <tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<input id="inputName" class="input__name border-0 bg-transparent" type="text" data-saved='yes'  value="Top discount name" disabled></input>
+					            </div>
+					        </div>
+				      </td>
+				      <td><input type="checkbox" class="input__checkbox" checked disabled></td>
+				      <td>
+				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
+				      </td>
+				    </tr>
+
+				    <tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<input id="inputName" class="input__name border-0 bg-transparent" type="text" data-saved='yes'  value="Top discount name" disabled></input>
+					            </div>
+					        </div>
+				      </td>
+				      <td><input type="checkbox" class="input__checkbox" checked disabled></td>
+				      <td>
+				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
+				      </td>
+				    </tr>
 
 				    <tr>
 				    	<td>
@@ -250,17 +288,11 @@
 
 
 
-<script src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-<script src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="./dist/js/bootstrap-tagsinput.min.js"></script> -->
-<!-- <script src="./dist/js/scripts.js"></script> -->
+<script src="./assets/dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="./assets/dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
 
-<script type="text/javascript" src="./dist/DataTables/datatables.min.js"></script>
-<script type="./dist/DataTables/dataTables.bootstrap4.min.js"></script>
-
-<!-- <script src="./dist/bootstrap3-editable-1.5.1/js/bootstrap-editable.min.js"></script> -->
-<!-- <script type="text/javascript" src="dist/DataTables/select/dataTables.select.min.js"></script> -->
-<!-- <script type="text/javascript" src="dist/DataTables/select/gyrocode/dataTables.checkboxes.min.js"></script> -->
+<script type="text/javascript" src="./assets/dist/DataTables/datatables.min.js"></script>
+<script src="./assets/dist/DataTables/dataTables.bootstrap4.min.js"></script>
 
 <script>
   $(function () {
@@ -281,8 +313,6 @@
 <!-- добавить строку в таблицу -->
 <script>
 	var body = $('body');
-	// $.fn.editable.defaults.mode = 'inline';
-	// $.fn.editable.defaults.showbuttons = false;
 
 	$('#btnAddToUpDiscountPlanForStore').click(function() {
 
@@ -471,7 +501,7 @@
 
 
 		});
- 		$("div.toolbar").html('<h1>Discount Plan TopUp Details - <span class="h3">'+$('.input__name').text()+'</span></h1>');
+ 		$("div.toolbar").html(`<h1>Discount Plan TopUp Details - <span class="h3">`+$('#inputName').val()+`</span></h1>`);
 
 		// function filterGlobal () {
 		    // $('#storeManagement').DataTable().search(

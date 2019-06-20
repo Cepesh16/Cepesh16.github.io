@@ -9,12 +9,12 @@
     <!--
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	-->
-	<link rel="stylesheet" href="./dist/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">
 	
-	<link rel="stylesheet" type="text/css" href="dist/css/navbar.css">
-	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<link href="./dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
+	<link href="./assets/dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
 	
   		<title>Employee Management</title>
 	
@@ -86,19 +86,32 @@
 
 				  <thead>
 				    <tr class="table-secondary">
-				      <th scope="col">User ID</th>
-				      <th scope="col">Password</th>
-				      <th scope="col">Edit</th>
+				      <th>User ID</th>
+				      <th>Password</th>
+				      <th>Edit</th>
 				    </tr>
 				  </thead>
 
 				  <tbody>
 
 				    <tr>
-				      <td><input id="userID" data-index="0" class="user__id border-0 bg-none" type="text" value="name user" disabled></td>
-				      <td><input id="userPasswordID" data-index="0" class="user__password border-0 bg-none" type="password" value="1234abcd" disabled></td>
+				      <td><input id="userID" data-saved="yes" class="input__name border-0 bg-transparent" type="text" value="nameuser" disabled></td>
+				      <td><input id="userPasswordID" data-saved="yes" class="input__password border-0 bg-transparent" type="password" value="mypassword" disabled></td>
 				      <td>
-				      	<a id="editUserAndPasswordID" data-index="0" class="user__edit " href="#"><i class="fas fa-edit mr-2"></i></a>
+				      	<button id="editUserAndPasswordID" class="btn__editName "><i class="fas fa-edit"></i></button>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td><input id="userID" data-saved="yes" class="input__name border-0 bg-transparent" type="text" value="nameuser" disabled></td>
+				      <td><input id="userPasswordID" data-saved="yes" class="input__password border-0 bg-transparent" type="password" value="mypassword" disabled></td>
+				      <td>
+				      	<button id="editUserAndPasswordID" class="btn__editName "><i class="fas fa-edit"></i></button>
+				      </td>
+				    </tr>
+				      <td><input id="userID" data-saved="yes" class="input__name border-0 bg-transparent" type="text" value="nameuser" disabled></td>
+				      <td><input id="userPasswordID" data-saved="yes" class="input__password border-0 bg-transparent" type="password" value="mypassword" disabled></td>
+				      <td>
+				      	<button id="editUserAndPasswordID" class="btn__editName "><i class="fas fa-edit"></i></button>
 				      </td>
 				    </tr>
 				  </tbody>
@@ -107,8 +120,8 @@
 			</div>
 
 			<div id="btnPanel" class="col-auto mb-5 mx-auto d-none">
-				<button type="submit" id="btnSave" class="btn btn-primary rounded px-4 mr-2">Save</button>
-				<button type="submit" id="btnCancel" class="btn btn-primary rounded px-4">Cancel</button>
+				<button type="submit" id="btnSave" class="btn__saveName btn btn-primary rounded px-4 mr-2">Save</button>
+				<button type="submit" id="btnCancel" class="btn__cancelEdit btn btn-primary rounded px-4">Cancel</button>
 			</div>
 
 		</div>
@@ -122,8 +135,8 @@
 
 
 
-<script src="./dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
-<script src="./dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="./assets/dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
 		
 
 <script>
@@ -142,101 +155,117 @@
   })
 </script>
 
-<!-- 	var count = 1;
-$('#btnAddEmployee').click(function() {
-	var userID = 'userID' + count;
-	var userPasswordID = 'userPasswordID' + count;
-	var editUserAndPasswordID = 'editUserAndPasswordID' + count;
-	var dataIndex = count;
-	$('#tableEmloyeeManagement tbody').append(`<tr><td><input id="${userID}" data-index="${dataIndex}" class="border-0 bg-none" type="text" value="name user" disabled></td><td><input id="${userPasswordID}" data-index="${dataIndex}" class="border-0 bg-none" type="password" value="1234abcd" disabled></td><td><a id="${editUserAndPasswordID}" data-index="${dataIndex}" href="#"><i class="fas fa-edit mr-2"></i></a></td></tr>`);
-	count++;
-}) -->
 <script>
 	var body = $('body');
-  $('#btnAddEmployee').click(function() {
-	var count = parseInt($(this).attr('data-count'));
-	$('#tableEmloyeeManagement tbody').append(`<tr><td><input id="userID`+count+`" data-index="0" class="user__id border-0 bg-none" type="text" value="name user" disabled></td><td><input id="userPasswordID`+count+`" data-index="0" class="user__password border-0 bg-none" type="password" value="1234abcd" disabled></td><td><a id="editUserAndPasswordID" data-index="0" class="user__edit " href="#"><i class="fas fa-edit mr-2"></i></a></td></tr>`);
-	$(this).attr('data-count', count+1);
+
+	$('#btnAddEmployee').click(function() {
+
+		var count = parseInt($(this).attr('data-count'));
+		var countUser = 1;
+		var findInput =	$(this).parent().parent().find('.input__name[data-saved="no"]');
+		if (findInput.data('saved') == 'no') {
+			alert("Edit and save last added user for add new Employee");
+		} else {
+			$('#tableEmloyeeManagement tbody').append(`
+				<tr>
+		      <td><input id="userID" data-saved="no" class="input__name border-0 bg-transparent" type="text" value="user`+count+`" disabled></td>
+		      <td><input id="userPasswordID" data-saved="no" class="input__password border-0 bg-transparent" type="password" value="newpassword`+count+`" disabled></td>
+		      <td>
+		      	<button id="editUserAndPasswordID" class="btn__editName "><i class="fas fa-edit"></i></button>
+		      </td>
+		    </tr>`);
+
+			$(this).attr('data-count', count+1);
+		}
+
+
+
 	});
-	
-	body.on('click', '#editUserAndPasswordID', function() {
- 		var item = $(this).parent().parent();
-  	var inputId = item.find('.user__id');
-    var inputPassword = item.find('.user__password');
-		// вкл/выкл border
-		if(inputId.hasClass('border-0') && inputPassword.hasClass('border-0')) {
-			inputId.toggleClass('border-0');
-			inputPassword.toggleClass('border-0');
-		}		
-		// вкл/выкл фон
-		if(inputId.hasClass('bg-none') && inputPassword.hasClass('bg-none')) {
-			inputId.toggleClass('bg-none');
-			inputPassword.toggleClass('bg-none');
-		}
-		// выкл disabled
-		inputId.prop('disabled', false);
-		inputPassword.prop('disabled', false);
+				var inputNameValueSave;
+				var inputPasswordValueSave;
+				var itemFromEdit;
+				// редактировать
+				body.on('click', '.btn__editName', function(e) {
+					e.stopPropagation();
+				  var item = $(this).parent().parent();
+				  itemFromEdit = item;
+ 					var inputName = item.find('.input__name');
+ 					var inputPassword = item.find('.input__password');
+			  	var btnEditName = item.parent().find('.btn__editName');
+			  	var btnPanel = $('#btnPanel');
 
-		// спрятать btnPanel
-		if( $('#btnPanel').hasClass('d-none')) {
-			$('#btnPanel').toggleClass('d-none');
-		}
-	})
+			    inputNameValueSave = inputName.val();
+			    inputPasswordValueSave = inputPassword.val();
 
-	body.on('click', '#btnSave', function() {
- 		var item = $(this).parent().parent();
-  	var inputId = item.find('.user__id');
-    var inputPassword = item.find('.user__password');
-		// вкл/выкл border
-		if(!inputId.hasClass('border-0') && !inputPassword.hasClass('border-0')) {
-			inputId.toggleClass('border-0');
-			inputPassword.toggleClass('border-0');
-		}
-		// выкл disabled
-		inputId.prop('disabled', true);
-		inputPassword.prop('disabled', true);
-		// спрятать btnPanel
-		if(!$('#btnPanel').hasClass('d-none')) {
-			$('#btnPanel').toggleClass('d-none');
-		}
-	})
+				  inputName.prop('disabled', false);
+				  inputPassword.prop('disabled', false);
+  				inputName.focus();
 
-	body.on('click', '#btnCancel', function() {
- 		var item = $(this).parent().parent();
-  	var inputId = item.find('.user__id');
-    var inputPassword = item.find('.user__password');
-		// вкл/выкл border
-		if(!inputId.hasClass('border-0') && !inputPassword.hasClass('border-0')) {
-			inputId.toggleClass('border-0');
-			inputPassword.toggleClass('border-0');
-		}
-		// выкл disabled
-		inputId.prop('disabled', true);
-		inputPassword.prop('disabled', true);
-		// спрятать btnPanel
-		if(!$('#btnPanel').hasClass('d-none')) {
-			$('#btnPanel').toggleClass('d-none');
-		}
-	})
+  				inputName.removeClass('bg-transparent');
+  				inputPassword.removeClass('bg-transparent');
+
+					btnEditName.addClass('d-none');
+					btnPanel.removeClass('d-none');
+
+				})
+				// сохранить
+				body.on('click', '.btn__saveName', function(e) {
+					e.stopPropagation(); 
+				  var item = itemFromEdit;
+ 					var inputName = item.find('.input__name');
+ 					var inputPassword = item.find('.input__password');
+			  	var btnEditName = item.parent().find('.btn__editName');
+			  	var btnPanel = $('#btnPanel');
+
+			    inputName.attr('data-saved', 'yes');
+			    inputPassword.attr('data-saved', 'yes');
+
+			    // меняем value у полей на введенное
+ 					var inputNameValue = inputName.val();
+ 					var inputPasswordValue = inputPassword.val();
+
+ 					inputName.attr('value', inputNameValue);
+ 					inputPassword.attr('value', inputPasswordValue);
+
+				  inputName.prop('disabled', true);
+				  inputPassword.prop('disabled', true);
+
+  				inputName.addClass('bg-transparent');
+  				inputPassword.addClass('bg-transparent');
+					btnEditName.removeClass('d-none');
+					btnPanel.addClass('d-none');
+				})
+
+				body.on('click', '.btn__cancelEdit', function(e) {
+					e.stopPropagation();
+				  var item = itemFromEdit;
+ 					var inputName = item.find('.input__name');
+ 					var inputPassword = item.find('.input__password');
+			  	var btnEditName = item.parent().find('.btn__editName');
+			  	var btnPanel = $('#btnPanel');
+
+			    if (inputName.attr('data-saved') === 'no') {
+						item.closest('tr').remove();
+			    }
+
+			    inputName.attr('value', inputNameValueSave);
+			    inputName.val(inputNameValueSave);
+			    inputPassword.attr('value', inputPasswordValueSave);
+			    inputPassword.val(inputPasswordValueSave);
 
 
-	// $('#btnCancel').click(function() {
-		
-	// 	// вкл/выкл border
-	// 	if(!$('#userID').hasClass('border-0') && !$('#userPasswordID').hasClass('border-0')) {
-	// 		$('#userID').toggleClass('border-0');
-	// 		$('#userPasswordID').toggleClass('border-0');
-	// 	}
-	// 	// выкл disabled		
-	// 	$('#userID').prop('disabled', true);
-	// 	$('#userPasswordID').prop('disabled', true);
-	// 	// спрятать btnPanel
-	// 	if(!$('#btnPanel').hasClass('d-none')) {
-	// 		$('#btnPanel').toggleClass('d-none');
-	// 	}
-	// })
+				  inputName.prop('disabled', true);
+				  inputName.addClass('bg-transparent');
+					inputPassword.prop('disabled', true);
+				  inputPassword.addClass('bg-transparent');
 
-	
+
+					btnEditName.removeClass('d-none');
+					btnPanel.addClass('d-none');
+
+					// btnDeleteRow.removeClass('d-none');
+				})
+
 </script>
 
 
