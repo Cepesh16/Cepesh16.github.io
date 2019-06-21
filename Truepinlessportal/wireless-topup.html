@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/dist/fontawesome-free-5.9.0-web/css/all.css">
+
+	
+	<title>Wireless Topup</title>
+
+</head>
+<body>
+	
+	<header class="bg-info fixed-top">
+		<nav class="container navbar navbar-expand-sm bg-info">
+
+		  <ul class="navbar-nav">
+		    <li class="nav-item px-3 bg-light border-right border-secondary rounded-left">
+		      <a class="nav-link text-dark" href="./wireless-topup.html">Home</a>
+		    </li>
+		    <li class="nav-item px-3 bg-light border-right border-secondary">
+		      <a class="nav-link text-dark" href="./users.html">Users</a>
+		    </li>
+		    <li class="nav-item px-3 bg-light dropdown rounded-right">
+		      <a class="nav-link text-dark dropdown-toggle" href="./reports.html" id="navbardrop" data-toggle="dropdown">
+		      	Report
+		    	</a>
+			    <div class="dropdown-menu rounded-0 border border-secondary mt-0">
+			    	<a class="dropdown-item border-bottom" href="#">Report 1</a>
+			    	<a class="dropdown-item" href="#">Report 2</a>
+			    </div>
+		    </li>
+		  </ul>
+		  <form class="inline ml-auto">
+		  	<button class="btn btn-dark">Support</button>
+		  </form>
+
+		</nav>
+	</header>
+	<main class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+
+			<div class="col-10 col-lg-6">
+				<div class="card mx-auto" style="max-width: 500px;">
+					<div class="card-header">
+						<h4>Mobile Topup</h4>
+					</div>
+					<div class="card-body">
+						<form>
+							<label>Country</label>
+							<div class="form-group">
+								<select class="form-control">
+									<option value="">Choose country</option>
+									<option>Brasil</option>
+									<option>Canada</option>
+									<option>Germany</option>
+								</select>
+							</div>
+							
+							<label for="">Service Operator</label>
+							<div class="form-group">
+								<select class="form-control">
+									<option value="">Choose operator</option>
+									<option>operator 1</option>
+									<option>operator 2</option>
+									<option>operator 3</option>
+								</select>
+							</div>
+
+							<label for="">Phone Number</label><br>
+							<div class="form-group input-group">
+								<div class="input-group-prepend mr-2">
+									<select class="form-control input-group-text bg-transparent">
+										<option>Code</option>
+										<option>1234</option>
+										<option>2234</option>
+										<option>3234</option>
+									</select>
+								</div>
+								<input class="form-control" placeholder="1234567" pattern="[0-9]">
+							</div>
+
+							<label for="">Select Amount:</label>
+							<div class="form-group mb-4">
+								<select class="form-control">
+										<option value="">Select Amount</option>
+										<option>5</option>
+										<option>20</option>
+										<option>50</option>
+									</select>
+							</div>
+							<div class="form-group">
+								<button class="btn btn-primary w-100" type="submit">Send Recharge Now</button>
+							</div>
+						</form>
+					</div>
+
+
+				</div> <!-- card -->
+			</div> <!-- col -->
+
+		</div> <!-- row -->
+
+
+	</main>
+	
+	<footer class="footer bg-info">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col mx-auto text-center">
+					<p class="my-2">© 2019</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="assets/dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+	<script src="assets/dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+html, body {
+	height: 100%;
+}
+body {
+	margin-top: 55px;
+}
+
+/*.input-group .form-control.phone-width {
+	width: 40px;
+}*/
+
+/*.form-control:focus,
+.input-group:focus { 
+    outline: none; 
+    box-shadow:none;
+}*/
+.border-none {
+	border: none;
+}
+
+.input-width {
+	max-width: 180px;
+
+}
