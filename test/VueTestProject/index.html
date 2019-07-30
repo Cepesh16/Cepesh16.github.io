@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cars application</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/dist/bootstrap-4.3.1/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+	
+	<div class="container p-5" id="app">
+
+		<h1>Cars Application</h1>
+
+		<div class="row">
+			<!-- первая колонка -->
+			<div class="col-12 col-md-4">
+
+				<div class="form-group">
+					<label for="search">Find your car</label>
+					<input type="text" class="form-control" id="searchCar" placeholder="toyota">
+				</div>
+
+				<ul class="list-group">
+					<li 
+						v-for="(car, index) of cars"
+						class="list-group-item list-group-item-action pointer"
+						v-on:click="selectCar(index)"
+					>
+						{{ car.name }} - {{ car.model }}
+					</li>
+				</ul>
+			</div> <!-- col -->
+
+			<!-- вторая колонка -->
+			<div class="col-12 col-md-4">
+				<h2>{{ car.name }}</h2>
+				<img 
+					:src="car.image" 
+					v-bind:alt="car.name"
+					class="w-100" 
+				>
+				<!-- двоеточие - это упрощенное v-bind -->
+			</div> <!-- col -->
+			
+			<!-- третья колонка -->
+			<div class="col-12 col-md-4">
+				
+				<h3>Car details</h3>
+				
+				<ul>
+					<li>Model - <strong>{{ car.model }}</strong></li>
+					<li>Year - <strong>{{ car.year }}</strong></li>
+					<li>Owner - <strong>{{ car.owner }}</strong></li>
+				</ul>
+				
+				<p>+7 923 155 73 43</p>
+
+				<button class="btn btn-outline-success mr-3">Show Phone</button>
+				<button class="btn btn-primary">Buy</button>
+
+			</div> <!-- col -->
+		</div> <!-- row -->
+	</div> <!-- container -->
+
+
+	<!-- <script src="assets/dist/bootstrap-4.3.1/bootstrap.bundle.js"></script> -->
+	<script src="assets/dist/vuejs/vue.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
