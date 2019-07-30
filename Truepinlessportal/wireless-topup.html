@@ -13,10 +13,48 @@
 
 </head>
 <body>
+					<!-- Modal -->
+				<div class="modal fade" id="printModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content border-0">
+				      <div class="d-print-none modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body my-2">
+				        <table id="printTable" class="table table-bordered">
+								  <tbody>
+								    <tr>
+								      <td>Mark</td>
+								      <td>Otto</td>
+								    </tr>
+								    <tr>
+								      <td>Jacob</td>
+								      <td>Thornton</td>
+								    </tr>
+								    <tr>
+								      <td>Larry</td>
+								      <td>the Bird</td>
+								    </tr>
+								    <tr>
+								      <td>Larry</td>
+								      <td>the Bird</td>
+								    </tr>
+								  </tbody>
+								</table>				      </div>
+				      <div class="d-print-none modal-footer">
+				        <button id="printBtn" type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
 	
-	<header class="bg-light fixed-top border-bottom">
-		<div class="bg-light border-bottom">
-			<div class="container d-flex py-1 bg-light text-dark">
+	<header class="d-print-none bg-light fixed-top border-bottom">
+		<div class="bg-info border-bottom">
+			<div class="container d-flex py-1 bg-info text-light">
 		  	<div class="align-self-center">
 		  		<span>Hello, 
 		  			<span class="font-weight-bold">Vasya Pupkin</span> | Credit limit: 
@@ -25,8 +63,8 @@
 		  			<span class="font-weight-bold">$194.40</span>
 		  		</span>
 		  	</div>
-		  	
-	  		<button class="btn btn-light border ml-auto"><i class="fas fa-power-off fa-lg pr-2"></i>Logout</button>
+
+	  		<button class="btn btn-info border ml-auto"><i class="fas fa-power-off fa-lg pr-2"></i>Logout</button>
 			</div>
 		</div>
 
@@ -42,13 +80,14 @@
 		      <a class="nav-link dropdown-toggle" href="./reports.html" id="navbardrop" data-toggle="dropdown">
 		      	Report
 		    	</a>
+		    	
 			    <div class="dropdown-menu mt-0">
 			    	<a class="dropdown-item border-bottom" href="./report-sub1.html">Report 1</a>
 			    	<a class="dropdown-item" href="./report-sub2.html">Report 2</a>
 			    </div>
-
 		    </li>
 		  </ul>
+
 		  <form class="inline ml-auto">
 		  	<button class="btn btn-light border pt-0" type="button">
 		  		<div class="float-left"><i class="fas fa-phone-alt fa-lg mr-2 mt-4"></i></div>
@@ -62,11 +101,23 @@
 		</nav>
 	</header>
 
-	<main class="container h-100">
+	<main class="d-print-none container h-100">
 		<div class="row h-100 justify-content-center">
-
 			<div class="col-10 col-lg-6">
-				<div class="card mx-auto" style="max-width: 500px;">
+				
+				<!-- кнопка -->
+				<div class="alert alert-secondary alert-dismissible fade show m-auto mb-5" style="max-width: 500px; role="alert">
+				  
+				  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#printModal">Print a receipt</button>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+
+
+
+
+				<div class="card mx-auto mt-3" style="max-width: 500px;">
 					<div class="card-header">
 						<h4>Mobile Topup</h4>
 					</div>
@@ -136,7 +187,7 @@
 
 	</main>
 	
-	<footer class="footer bg-light border-top">
+	<footer class="d-print-none footer bg-light border-top">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col mx-auto text-center">
@@ -149,6 +200,39 @@
 
 	<script src="assets/dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 	<script src="assets/dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+
+<!-- <script type="text/javascript">
+
+
+
+	$('#printBtn').click(function(){
+    	$("#outprint").print();
+
+
+ 		var win = window.open('');
+		win.document.write('<html><head><title>Print it!</title><link rel="stylesheet" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">');
+		win.document.write($("#printTable").html());
+		win.document.write('</body></html>');
+		win.print();
+		win.close();
+		});
+	</script> -->
+
+<!-- <script>
+	$('#printBtn').click(function(){
+    var PW = window.open('', '_blank', 'Print content');
+ 
+    //IF YOU HAVE DIV STYLE IN CSS, REMOVE BELOW COMMENT AND ADD CSS ADDRESS
+    PW.document.write('<link rel="stylesheet" type="text/css" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">');
+ 
+    PW.document.write($("#printTable").html());
+    PW.document.close();
+    PW.focus();
+    PW.print();
+		});
+</script> -->
+
+
 
 </body>
 </html>
