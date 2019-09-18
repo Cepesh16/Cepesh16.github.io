@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!--
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	-->
+	<link rel="stylesheet" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./assets/dist/DataTables/dataTables.bootstrap4.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<link href="./assets/dist/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
+	
+  		<title>TopUp Discoun for Store</title>
+	
+
+  </head>
+<body>
+	<header class="fixed-top ">
+		<nav class="navbar container navbar-dark bg-header text-light">
+
+	    <button class="navbar-toggler" type="button" data-toggle="offcanvas">
+	      <span class="fas fa-bars"></span>
+	    </button>
+
+	    <div class="navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
+	      <button class="offcanvas-close" type="button" data-toggle="offcanvas-close">
+	        ×
+	      </button>
+				<!-- MENU -->
+	      <ul class="navbar-nav">
+	        <li class="nav-item border-bottom border-primary active">
+	          <a class="nav-link" href="./manage-store.html"><i class="fas fa-users pr-2"></i>Manage Store<span class="sr-only">(current)</span></a>
+	        </li>
+	        <li class="nav-item border-bottom border-primary">
+	          <a class="nav-link" href="#"><i class="fas fa-dollar-sign pr-2"></i>Store Payment</a>
+	        </li>
+	        <li class="nav-item border-bottom border-primary">
+	          <a class="nav-link" href="#"><i class="fas fa-dollar-sign pr-2"></i>Manage Discount Plan</a>
+	        </li>
+	        <li class="nav-item border-bottom border-primary accordion" id="accordion-menu" data-toggle="collapse" data-target="#collapse-menu">
+	        	<a class="nav-link" href="#"><i class="fas fa-chart-bar pr-2"></i>Report</a>
+	        	<!-- SUBMENU -->
+	        	<ul id="collapse-menu" class="submenu navbar-nav collapse">
+	        		<li class="nav-item border-bottom border-info">
+	        			<a class="nav-link ml-2" href="#"><i class="fas fa-angle-right pr-2"></i>Distributor Transactions</a>
+	        		</li>
+	        		<li class="nav-item border-bottom border-info">
+	        			<a class="nav-link ml-2" href="#"><i class="fas fa-angle-right pr-2"></i>Store Activity Report</a></li>
+	        		<li class="nav-item border-bottom border-info">
+	        			<a class="nav-link ml-2" href="#"><i class="fas fa-angle-right pr-2"></i>Distributor Commission Report</a></li>
+	        		<li class="nav-item border-bottom border-info">
+	        			<a class="nav-link ml-2" href="#"><i class="fas fa-angle-right pr-2"></i>Store Receivables</a>
+	        		</li>
+	        	</ul>
+	        </li>
+	        <li class="nav-item border-bottom border-primary">
+	          <a class="nav-link" href="#"><i class="fas fa-chart-bar pr-2"></i>Employee</a>
+	        </li>
+	      </ul>
+
+	    </div>
+			
+	    <a class="navbar-brand ml-3" href="dashboard.html">Ezmaxicall</a>
+	    <button class="btn btn-logout rounded-0 ml-auto px-4"><i class="fas fa-power-off pr-2"></i>Logout</button>
+	  </nav>
+
+	</header>
+
+	<!-- CONTAINER -->
+	<main class="container">
+		<h1 class="mb-5">TopUp Discount Plan for Store</h1>
+
+		<div class="row flex-row-reverse">
+			<div class="col-auto mb-3">
+				<button id="btnAddToUpDiscountPlanForStore" class="btn btn-secondary rounded float-right" data-count='3'><i class="fas fa-plus-circle mr-2"></i>Add TopUp Discount Plan for Store</button>
+			</div>
+
+			<div class="col-12">
+				<table id="tableDiscountPlanForStore" class="table__data table table-striped table-bordered text-center">
+
+				  <thead>
+				    <tr class="table-secondary">
+				      <th scope="col"></th>
+				      <th scope="col">Name</th>
+				      <th scope="col">Is Default?</th>
+				      <th scope="col"></th>
+				    </tr>
+				  </thead>
+
+				  <tbody>
+
+				    <tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<input id="inputName" class="input__name border-0 bg-transparent" type="text" data-saved='yes'  value="Top discount name" disabled></input>
+					            </div>
+					        </div>
+				      </td>
+				      <td><input type="checkbox" class="input__checkbox" checked disabled></td>
+				      <td>
+				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
+				      </td>
+				    </tr>
+
+				    <tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<input id="inputName" class="input__name border-0 bg-transparent" type="text" data-saved='yes'  value="Top discount name" disabled></input>
+					            </div>
+					        </div>
+				      </td>
+				      <td><input type="checkbox" class="input__checkbox" checked disabled></td>
+				      <td>
+				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
+				      </td>
+				    </tr>
+
+				    <tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<input id="inputName" class="input__name border-0 bg-transparent" type="text" data-saved='yes'  value="Top discount name" disabled></input>
+					            </div>
+					        </div>
+				      </td>
+				      <td><input type="checkbox" class="input__checkbox" checked disabled></td>
+				      <td>
+				      	<button id="btnEditName" class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName" class="btn__saveName mr-2 d-none"><i class="fas fa-save"></i></button>
+
+				      	<button id="btnDeleteRow" class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit  d-none"><i class="fas fa-window-close"></i></button>
+				      </td>
+				    </tr>
+				  </tbody>
+
+				</table>
+
+				<!-- модальное окно delete row -->
+				<div class="modal fade" id="deleteRowModal" tabindex="-1" role="dialog" aria-labelledby="deleteRowModal" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title text-uppercase font-weight-bold">Delete row</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <p>Do you want to delete this row?</p>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary">Yes</button>
+				        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+
+
+		<div class="row " id="hidePanelTableViewDetails1">
+			<div class="col-12">
+
+
+
+				<table id="tableViewDetails1" class="table table-striped table-bordered text-center" style="width:100%">
+		      <thead>
+		      		<tr>
+		      			<td colspan="9">
+		      				<form class="form-inline w-100">
+
+										<div class="form-group my-2">
+											<label for="col0_filter">Country</label>
+											<div class="col-md-3 mr-5" id="filter_col1" data-column="0">
+												<input type="text" class="form-control column_filter" id="col0_filter" placeholder="search">
+											</div>
+										</div>
+										
+										<div class="form-group my-2">
+											<label for="store">Operator</label>
+											<div class="col-md-3 mr-5 " id="filter_col2" data-column="1">
+												<input type="text" class="form-control column_filter" id="col1_filter" placeholder="search">
+											</div>
+										</div>
+										<button class="btn btn-secondary p-1 ml-auto"><i class="fas fa-save mr-2"></i>Save All Rows</button>
+
+									</form>
+		      			</td>
+		      		</tr>
+		          <tr>
+		              <th>Country</th>
+		              <th>Operator</th>
+		              <th>Type</th>
+		              <th>Min Value</th>
+		              <th>Max Value</th>
+		              <th>Denominations</th>
+		              <th>Your Commission%</th>
+		              <th>Distributor Discount%<br><input id="inputAllDiscount" type="text" class="w-25 mr-2"><button id="btnSetAllInputDiscount">Set</button></th>
+		              <th><input id="selectAllActive" type="checkbox">Active</th>
+		          </tr>
+		      </thead>
+		      <tbody>
+		          <tr>
+		              <td>Tiger Nixon</td>
+		              <td>System Architect</td>
+		              <td>Edinburgh</td>
+		              <td>61</td>
+		              <td>454</td>
+		              <td>$320,800</td>
+		              <td>61</td>
+		              <td><input type="text" value="0.00" class="setInputDiscount text-center"></td>
+		              <td><input class="checkboxClass" type="checkbox">Active</td>
+		          </tr>
+		          <tr>
+		              <td>Garrett Winters</td>
+		              <td>Accountant</td>
+		              <td>Tokyo</td>
+		              <td>63</td>
+		              <td>454</td>
+		              <td>$170,750</td>
+		              <td>61</td>
+		              <td><input type="text" value="0.00" class="setInputDiscount text-center"></td>
+		              <td><input class="checkboxClass" type="checkbox">Active</td>
+		          </tr>
+		          <tr>
+		              <td>Charde Marshall</td>
+		              <td>Regional Director</td>
+		              <td>San Francisco</td>
+		              <td>36</td>
+		              <td>454</td>
+		              <td>$470,600</td>
+		              <td>61</td>
+		              <td><input type="text" value="0.00" class="setInputDiscount text-center"></td>
+		              <td><input class="checkboxClass" type="checkbox">Active</td>
+		          </tr>    
+		          <tr>
+		              <td>Caesar Vance</td>
+		              <td>Pre-Sales Support</td>
+		              <td>New York</td>
+		              <td>21</td>
+		              <td>454</td>
+		              <td>$106,450</td>
+		              <td>61</td>
+		              <td><input type="text" value="0.00" class="setInputDiscount text-center"></td>
+		              <td><input class="checkboxClass" type="checkbox">Active</td>
+		          </tr>
+		      </tbody>
+
+		    </table>
+    	</div>
+		</div>
+	</main>
+
+
+
+
+<script src="./assets/dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="./assets/dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="./assets/dist/DataTables/datatables.min.js"></script>
+<script src="./assets/dist/DataTables/dataTables.bootstrap4.min.js"></script>
+
+<script>
+  $(function () {
+    'use strict';
+
+    $('[data-toggle="offcanvas"]').on('click', function () {
+      $('.offcanvas-collapse').addClass('open');
+      $('body').addClass('offcanvas-open');
+    })
+    $('[data-toggle="offcanvas-close"]').on('click', function () {
+      $('.offcanvas-collapse').removeClass('open');
+      $('body').removeClass('offcanvas-open');
+
+    })
+  })
+</script>
+
+<!-- добавить строку в таблицу -->
+<script>
+	var body = $('body');
+
+	$('#btnAddToUpDiscountPlanForStore').click(function() {
+
+		var count = parseInt($(this).attr('data-count'));
+		$('#tableDiscountPlanForStore tbody').append(`<tr>
+				    	<td>
+				    		<a href="#" id="viewDetailsRowID`+count+`"><i class="fas fa-sitemap d-block"></i>View Details</a>
+				    	</td>
+				      <td>
+									<div class="row justify-content-center">
+					            <div class="col-auto">
+					            	<input id="inputName`+count+`" class="input__name" type="text" data-saved='no' value="Top discount name"></input>
+					            </div>
+					        </div>
+				      </td>
+				      <td><input type="checkbox" class="input__checkbox"></td>
+				      <td>
+				      	<button id="btnEditName`+count+`" class="btn__editName d-none mr-2"><i class="fas fa-edit"></i></button>
+				      	<button type="submit" id="btnSaveName`+count+`" class="btn__saveName mr-2"><i class="fas fa-save"></i></button>
+				      	
+				      	<button id="btnDeleteRow" class="btn__deleteRow d-none" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash-alt"></i></button>
+				      	<button id="btnCancelEdit" class="btn__cancelEdit"><i class="fas fa-window-close"></i></button>
+				      </td>
+				    </tr>`);
+
+			$(this).attr('data-count', count+1);
+	});
+
+				var inputNameValueSave;
+				// var inputCheckboxSave;
+
+				body.on('click', '.btn__editName', function(e) {
+					e.stopPropagation();
+				  var item = $(this).parent().parent();
+ 					var inputName = item.find('.input__name');
+					
+			  	var btnEditName = item.find('.btn__editName');
+			    var btnSaveName = item.find('.btn__saveName');
+			    var btnDeleteRow = item.find('.btn__deleteRow');
+			    var btnCancelEdit = item.find('.btn__cancelEdit');
+
+			    inputNameValueSave = inputName.val();
+
+				  inputName.prop('disabled', false);
+  				inputName.focus();
+
+  				inputName.removeClass('bg-transparent');
+					btnEditName.addClass('d-none');
+					btnSaveName.removeClass('d-none');
+
+					btnDeleteRow.addClass('d-none');
+					btnCancelEdit.removeClass('d-none');
+
+				})
+				body.on('click', '.btn__saveName', function(e) {
+					e.stopPropagation(); 
+
+				  var item = $(this).parent().parent();
+ 					var inputName = item.find('.input__name');
+ 					var inputCheckbox = item.find('.input__checkbox');
+
+			  	var btnEditName = item.find('.btn__editName');
+			    var btnSaveName = item.find('.btn__saveName');
+			    var btnDeleteRow = item.find('.btn__deleteRow');
+			    var btnCancelEdit = item.find('.btn__cancelEdit');
+
+			    inputName.attr('data-saved', 'yes');
+			    inputCheckbox.attr('disabled', true);
+
+
+					btnEditName.removeClass('d-none');
+					btnSaveName.addClass('d-none');
+					btnDeleteRow.removeClass('d-none');
+					btnCancelEdit.addClass('d-none');
+
+  				inputName.addClass('bg-transparent');
+  				inputName.addClass('border-0');
+
+ 					var inputNameValue = inputName.val();
+
+ 					inputName.val(inputNameValue);
+				  inputName.prop('disabled', true);
+				})
+
+				body.on('click', '.btn__cancelEdit', function(e) {
+					e.stopPropagation();
+	
+			 		var item = $(this).parent().parent();
+			 		var inputName = item.find('.input__name')
+			  	var btnEditName = item.find('.btn__editName');
+			    var btnSaveName = item.find('.btn__saveName');
+			    var btnDeleteRow = item.find('.btn__deleteRow');
+			    var btnCancelEdit = item.find('.btn__cancelEdit');
+
+			    if (inputName.attr('data-saved') === 'no') {
+						item.closest('tr').remove();
+			    }
+
+			    inputName.val(inputNameValueSave);
+
+				  inputName.prop('disabled', true);
+				  inputName.addClass('bg-transparent');
+
+					btnEditName.removeClass('d-none');
+					btnSaveName.addClass('d-none');
+
+					btnDeleteRow.removeClass('d-none');
+					btnCancelEdit.addClass('d-none');
+				})
+
+				// body.on('click', '.btn__deleteRow', function(e) {
+				// 	e.stopPropagation();
+
+				// 	var item = $(this);
+
+				// 	item.closest('tr').remove();
+				// 	// $('#tableDiscountPlanForStore tbody tr').remove();
+				// })
+
+
+
+</script>
+
+	<!-- table -->
+	<script>
+		$(document).ready( function () {
+	    $('#tableViewDetails1').DataTable();
+
+	    
+	    
+	} );
+	</script>
+	<!-- скрывать/показывать таблицу по клику -->
+	<script>
+			
+			$('#btnSetAllInputDiscount').click(function() {
+				var inputValue = $('#inputAllDiscount').val();
+				$('#tableViewDetails1 .setInputDiscount').val(inputValue);
+				// $(".mytext").attr("value");
+			});
+
+			/*#inputAllDiscount
+			  #btnSetAllInputDiscount
+			  .setInputDiscount
+*/
+			// выбрать все чекбоксы в последней колонке
+			$('#selectAllActive').click(function () {
+				// $('body input:checkbox').prop('checked', true);
+			// 	$('$selectAllActive').remove();
+				// $('.checkBoxClass').prop('checked', $(this).prop('checked'));
+		    if ($(this).is(':checked')){
+		        // $('body .checkBoxClass').prop('checked', true);
+		        $('#tableViewDetails1 input:checkbox').prop('checked', true);
+		    } else {
+		        // $('body .checkBoxClass').prop('checked', false);
+		        $('#tableViewDetails1 input:checkbox').prop('checked', false);
+		    }
+			});
+
+		
+		$('#viewDetailsRowID').click(function() {
+		if($('#hidePanelTableViewDetails1').hasClass('d-none')) {
+			$('#hidePanelTableViewDetails1').removeClass('d-none');
+		} else {
+			$('#hidePanelTableViewDetails1').addClass('d-none');
+		}
+	})
+	</script>
+<!-- 	Disable search by default
+<script>
+	$.extend( $.fn.dataTable.defaults, {
+	    searching: false
+	} );
+</script> -->
+	<!-- show entries убарть -->
+
+
+
+	<script>
+		$('#tableViewDetails1').dataTable( {
+		  "lengthChange": false,
+		  "ordering": false,
+		  "dom": '<"toolbar">frtip',
+
+		   // "dom": '<plf<t>i>'
+
+
+		});
+ 		$("div.toolbar").html(`<h1>Discount Plan TopUp Details - <span class="h3">`+$('#inputName').val()+`</span></h1>`);
+
+		// function filterGlobal () {
+		    // $('#storeManagement').DataTable().search(
+		        // $('#global_filter').val(),
+		        // $('#global_regex').prop('checked'),
+		        // $('#global_smart').prop('checked')
+		    // ).draw();
+		// }
+		
+		// прячем стандартное поле search 
+		$(".dataTables_filter").hide();
+
+
+		function filterColumn ( i ) {
+		    $('#tableViewDetails1').DataTable().column( i ).search(
+		        $('#col'+i+'_filter').val(),
+/*		        $('#col'+i+'_regex').prop('checked'),
+		        $('#col'+i+'_smart').prop('checked')*/
+		    ).draw();
+		}
+		 
+		$(document).ready(function() {
+		    $('#tableViewDetails1').DataTable();
+		 
+		    $('input.global_filter').on( 'keyup click', function () {
+		        filterGlobal();
+		    } );
+		 
+		    $('input.column_filter').on( 'keyup click', function () {
+		        filterColumn( $(this).parents('div').attr('data-column') );
+		    } );
+		} );
+	</script>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	
+	<title>Газета</title>
+</head>
+<body>
+	<!-- ДИАЛОГОВОЕ ОКНО МЕНЮ-->
+	<div class="modal" id="menuModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header pt-0 border-bottom-0">
+					<!-- <h5 class="modal-title">Title of the modal</h5> -->
+					<button type="button" class="close" data-dismiss="modal">
+						<span class="h1">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<ul class="list-group list-group-flush mb-5">
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Новости</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Публикации</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Колонки</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Интервью</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Графика</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Фото и відео</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Блоги</a></li>
+						<li class="list-group-item text-uppercase font-weight-bold h5"><a class="" href="#">Архив</a></li>
+					</ul>
+					
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item text-uppercase border-top-0"><a href="">Украинская правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Економическая правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Жизнь</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Европейская правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Блоги</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Историческая правда</a></li>
+						<li class="list-group-item text-uppercase"><a href="">ТаблоID</a></li>
+						<li class="list-group-item text-uppercase"><a href="">Форум</a></li>
+					</ul>
+				</div>
+				<!-- <div class="modal-footer"></div> -->
+			</div>
+		</div>
+	</div>
+	<!-- ДИАЛОГОВОЕ ОКНО ПОИСКА -->
+	<div class="modal" id="searchModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header pt-0 border-bottom-0">
+					<button type="button" class="close" data-dismiss="modal">
+						<span class="h1">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h1 class="text-center text-uppercase font-weight-normal mb-5">Поиск по сайту</h1>
+					<form class="form-inline justify-content-between">
+						<div class="form-group w-75 mb-2">
+							<input type="search" class="form-control w-100 border" id="inputSearch" placeholder="Что вы ищете?">
+						</div>
+						<button type="button" class="btn btn-secondary mb-2">Найти</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- НАВИГАЦИЯ -->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light py-0 border-bottom">
+			<div class="collapse navbar-collapse justify-content-center">
+				<ul class="navbar-nav text-small">
+					<li class="nav-item active"><a class="nav-link" href="#">ПОЛИТИКА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ЭКОНОМИКА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ЖИЗНЬ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ЕВРОПА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ФОРУМ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">БЛОГИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ИСТОРИЧЕСКАЯ ПРАВДА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ТАБОЛID</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ДОСТУП</a></li>
+					<li class="nav-item"><a class="nav-link text-red" href="#">ВЫБОРЫ - 2019</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row py-4 justify-content-between align-items-center text-small">
+				
+				<div class="col-auto d-lg-none">
+					  <button class="px-2 py-2 border bg-white text-uppercase" type="button" data-toggle="modal" data-target="#menuModal">Меню</button>
+				</div>
+
+				<div class="col-auto d-none d-lg-block">
+					<a class="px-4 py-2 border" href="#">FB</a>
+					<a class="px-4 py-2 border ml-1" href="#">TW</a>
+					<a class="px-4 py-2 border ml-1" href="#">TG</a>
+				</div>
+				
+				<div class="col-auto px-0">
+					<a class="d-none d-sm-block text-dark h2" href="#">Украинская Правда</a>
+					<a class="d-sm-none text-dark h6" href="#">Украинская правда</a>
+				</div>
+
+				<div class="col-auto">
+					<a class="d-none d-lg-inline-block px-2 py-2 border" href="#">
+						<span class="text-uppercase">укр</span>
+						<span>/</span>
+						<span class="text-uppercase">рус</span>
+					</a>
+					<button class="px-2 py-2 border ml-1 bg-white text-uppercase" type="button" data-toggle="modal" data-target="#searchModal">поиск</button>
+				</div>
+
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-light py-0 border-top">
+			<div class="collapse navbar-collapse justify-content-center">
+				<ul class="navbar-nav text-regular">
+					<li class="nav-item active"><a class="nav-link" href="#">ГЛАВНАЯ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">НОВОСТИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ПУБЛИКАЦИИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">КОЛОНКИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ИНТЕРВЬЮ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ГРАФИКА</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ФОТО/ВИДЕО</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">БЛОГИ</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">АРХИВ</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<div id="carouselControls" class="carousel carousel-news slide align-items-center mb-5" data-ride="carousel">
+		<div class="container align-items-center ">
+			<div class="row">
+				<div class="carousel-inner col py-4">
+
+					<div class="carousel-item active">
+						<div class="row">
+							<div class="col">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-md-block separator">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-lg-block separator">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-md-block separator">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-lg-block separator">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-md-block separator">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col d-none d-lg-block separator">
+								<div class="media">
+									<img src="img/slider-img/4.jpg" alt="">
+									<div class="media-body">
+										<p class="pl-3 text-white font-weight-bold">Lorem ipsum dolor sit amet, consectetur.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="controls col-12 col-sm-auto align-self-center d-flex justify-content-center pb-3 pb-sm-0">
+					<a class="px-2 py-2 border border-right-0" href="#carouselControls" data-slide="prev">
+						<span class="carousel-control-prev-icon d-block"></span>
+					</a>
+					<a class="px-2 py-2 border" href="#carouselControls" data-slide="next">
+						<span class="carousel-control-next-icon d-block"></span>
+					</a>
+						<!-- <span class="sr-only">Previous</span> -->
+						<!-- <span class="sr-only">Next</span> -->
+				</div>
+			</div>
+				
+		</div>
+			
+	</div>
+
+	<main class="container">
+
+		<div class="row mb-5">
+			<!-- ПЕРВЫЙ СТОЛБЕЦ -->
+			<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+				<div class="news-head">
+					<div class="text-small float-right mt-1">
+						<a class="text-red" href="#">ПОСЛЕДНИЕ</a>
+						<a class="ml-2 text-muted" href="#">НОВЫЕ</a>
+					</div>
+					<h5><a class="text-red" href="#">НОВОСТИ</a></h5>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+					<li class="list-group-item px-1 border-bottom-0 mb-4">
+						<div class="float-left">
+							<span class="text-small text-uppercase text-muted">14:01</span>
+						</div>
+						<div class="ml-5">
+							<a href="#">
+								<span class="">Первостолбцовые новости о чем-то там в мире политике, и экономике</span></a>
+						</div>
+					</li>
+				</ul>
+
+				<a class="d-block px-3 py-2 border mb-5" href="#">
+					<span class="text-uppercase text-small text-red">все публикации</span>
+					<span class="float-right font-weight-bold">+</span>
+				</a>
+			</div>
+
+			<!-- ВТОРОЙ СТОЛБЕЦ -->
+			<div class="col">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 border-left mb-4">
+						<!-- ГЛАВНАЯ НОВОСТЬ -->
+						<div class="card border-0 border-bottom-red mb-2">
+							<img class="card-img-top" src="img/news-col/news.JPG" alt="">
+							<div class="card-body px-0">
+								<a href="#"><h2>Заголовок какой-то новости о чем-то</h2></a>
+								<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ratione voluptate rerum.</p>
+								<p class="card-text text-small text-uppercase text-muted">5 февраля 2016, 17:55</p>
+							</div>
+						</div>
+						<div class="news-head">
+							<div class="text-small float-right">
+								<a class="text-muted text-uppercase" href="#">все публикации</a>
+							</div>
+							<h5><a class="text-red mb-2" href="#">ПОДРОБНО</a></h5>
+						</div>
+						<!-- ОСТАЛЬНЫЕ НОВОСТИ -->
+						<ul class="list-group list-group-flush">
+
+							<li class="list-group-item px-0 pb-0 border-0">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<span class="position-absolute mt-2 ml-2 py-0 px-1 bg-red text-white text-uppercase">интервью</span>
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="mt-1 text-small text-uppercase text-muted">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="list-group-item px-0 pb-0 pt-4">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="mt-1 text-small text-uppercase text-muted">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="list-group-item px-0 pt-4 pb-0 mb-4"><a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="mt-1 text-small text-uppercase text-muted">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- ГЛАВНАЯ НОВОСТЬ -->
+						<div class="card border-0 mb-2">
+							<img class="card-img-top" src="img/news-col/news.JPG" alt="">
+							<div class="card-body px-0">
+								<a href="#"><h2>Заголовок какой-то новости о чем-то</h2></a>
+								<p class="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ratione voluptate rerum.</p>
+								<p class="card-text text-small text-uppercase text-muted">5 февраля 2016, 17:55</p>
+							</div>
+						</div>
+						<!-- ОСТАЛЬНЫЕ НОВОСТИ -->
+						<ul class="list-group list-group-flush">
+
+							<li class="list-group-item px-0 pt-4 pb-0">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<span class="position-absolute mt-2 ml-2 py-0 px-1 bg-red text-white text-uppercase">интервью</span>
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="mt-1 text-small text-uppercase text-muted">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+
+							<li class="list-group-item px-0 pt-4 pb-0">
+								<a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="mt-1 text-small text-uppercase text-muted">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="list-group-item px-0 pt-4 pb-0 mb-4 border-bottom-0"><a href="#">
+									<div class="card border-0">
+										<div class="row no-gutters">
+											<div class="col col-md-5 position-relative">
+												<img class="w-100" src="img/news-col/подробно.jpg" alt="">
+											</div>
+											<div class="col col-md-7">
+												<div class="card-body py-0">
+													<h5 class="card-title">Заголовок новости о чем-то там случившемся</h5>
+													<p class="mt-1 text-small text-uppercase text-muted">8 мая 2015, 18:53</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<a class="d-block px-3 py-2 border" href="#">
+							<span class="text-uppercase text-small text-red">все публикации</span>
+							<span class="float-right font-weight-bold">+</span>
+						</a>
+					</div>
+					<!-- БЛОГИ, ТЕМАТИКА -->
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 border-left">
+						<div class="row">
+							<!-- блоги -->
+							<div class="col-12 order-2 order-lg-1">
+								<ul class="list-group list-group-flush border-top-red">
+									<!-- заголовок + навигация слайдера -->
+									<li class="list-group-item px-0 py-1 d-flex justify-content-between align-items-center">
+										
+										<h5 class="m-0"><a class="text-uppercase text-red" href="#">блоги</a></h5>
+										<div class="controls">
+											<a class="float-left px-2 py-1 border-right" href="#carouselBlogs" data-slide="prev">
+												<img class="d-block" src="img/icon/png/chevron-left-2x.png" alt="previous"></a>
+											<a class="float-left px-2 py-1" href="#carouselBlogs" data-slide="next">
+												<img class="d-block" src="img/icon/png/chevron-right-2x.png" alt="next"></a>
+										</div>
+									</li>
+									<!-- слайдер -->
+									<li class="list-group-item px-0">
+
+										<div id="carouselBlogs" class="carousel slide" data-ride="carousel">
+											<div class="carousel-inner">
+												<div class="carousel-item active">
+													<a href="#">
+														<img class="float-left mr-2 mt-2" src="img/blog-img/blog.jpg" alt="изображение">
+													</a>
+													<a href="#">
+														<span class="text-uppercase text-small text-red">имя фамилия</span>
+														<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+													</a>
+												</div>
+												<div class="carousel-item">
+													<a href="#">
+														<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+													</a>
+													<a href="#">
+														<span class="text-uppercase text-small text-red">имя фамилия</span>
+														<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+													</a>
+												</div>
+												<div class="carousel-item">
+													<a href="#">
+														<img class="float-left mr-2 mt-2" src="img/blog-img/blog.jpg" alt="изображение">
+													</a>
+													<a href="#">
+														<span class="text-uppercase text-small text-red">имя фамилия</span>
+														<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+													</a>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="list-group-item px-0 border-top-red">
+										<h5><a class="text-uppercase text-red" href="#">колонки</a></h5>
+										<a href="#">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+										</a>
+										<a href="#">
+											<span class="text-uppercase text-small text-red">имя фамилия</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</a>
+									</li>
+
+									<li class="list-group-item px-0">
+										<a href="#">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+										</a>
+										<a href="#">
+											<span class="text-uppercase text-small text-red">имя фамилия</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</a>
+									</li>
+									<li class="list-group-item px-0">
+										<a href="#">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+										</a>
+										<a href="#">
+											<span class="text-uppercase text-small text-red">имя фамилия</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</a>
+									</li>
+									<li class="list-group-item px-0">
+										<a href="#">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+										</a>
+										<a href="#">
+											<span class="text-uppercase text-small text-red">имя фамилия</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</a>
+									</li>
+									<li class="list-group-item px-0">
+										<a href="#">
+											<img class="float-left mr-2 mt-2" src="img/blog-img/blog-2.jpg" alt="изображение">
+										</a>
+										<a href="#">
+											<span class="text-uppercase text-small text-red">имя фамилия</span>
+											<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- тематика -->
+							<div class="col-12 order-1 order-lg-2 mb-4">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 border-0">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="list-group-item px-0 border-0 d-none d-lg-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="list-group-item px-0 border-0 d-none d-lg-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="list-group-item px-0 border-0 d-none d-lg-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- ПОПУЛЯРНОЕ -->
+		<div class="row mb-5">
+			<!-- заголовок -->
+			<div class="col-12">
+				<div class="border-top-red mb-2"></div>
+				<div class="row text-uppercase">
+					<div class="col-auto mr-auto">
+						<a href=""><h5>популярное</h5></a>
+					</div>
+					<div class="col-auto d-none d-sm-block">
+						<a class="text-red" href="#"><span class="text-small">за просмотрами</span></a>
+						<a class="ml-2" href="#"><span class="text-small">в соцсетях</span></a>
+						<a class="ml-2" href="#"><span class="text-small">выбор редактора</span></a>
+					</div>
+				</div>
+				
+			</div>
+				<!-- колонки -->
+			<div class="col-12 col-sm">
+				<span class="float-left text-big mr-3 font-weight-bold text-red">1</span>
+				<div class="overflow-hidden mt-2">
+					<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, animi!</p>
+					<span class="text-small text-muted">38409</span>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg">
+				<span class="float-left text-big mr-3 font-weight-bold text-red">2</span>
+				<div class="overflow-hidden mt-2">
+					<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, animi!</p>
+					<span class="text-small text-muted">38409</span>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg">
+				<span class="float-left text-big mr-3 font-weight-bold text-red">3</span>
+				<div class="overflow-hidden mt-2">
+					<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, animi!</p>
+					<span class="text-small text-muted">38409</span>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg">
+				<span class="float-left text-big mr-3 font-weight-bold text-red">4</span>
+				<div class="overflow-hidden mt-2">
+					<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, animi!</p>
+					<span class="text-small text-muted">38409</span>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg">
+				<span class="float-left text-big mr-3 font-weight-bold text-red">5</span>
+				<div class="overflow-hidden mt-2">
+					<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, animi!</p>
+					<span class="text-small text-muted">38409</span>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<section class="bg-silver pt-5">
+		<div class="container">
+			<!-- читайте, смотрите -->
+			<div class="row pt-4 mb-5">
+
+				<div class="col-12 d-flex mb-3 justify-content-between align-items-center">
+					<a class="" href="#">
+						<span class="h5 text-uppercase text-red">читайте, смотрите...</span>
+					</a>
+					<div class="controls">
+						<a class="float-left px-2 py-2 border border-right-0" href="#carouselArticles" data-slide="prev">
+							<img class="d-block" src="img/icon/png/chevron-left-2x.png" alt="">
+						</a>
+						<a class="float-left px-2 py-2 border" href="#carouselArticles" data-slide="next">
+							<img class="d-block" src="img/icon/png/chevron-right-2x.png" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div id="carouselArticles" class="carousel slide" data-ried="carousel">
+						<div class="carousel-inner">
+
+							<div class="carousel-item active">
+								<div class="row no-gutters">
+									<div class="col">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article1.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col d-none d-sm-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article2.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col d-none d-lg-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article3.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="row no-gutters">
+									<div class="col">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article3.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col d-none d-sm-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article1.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col d-none d-lg-block">
+										<a href="#">
+											<div class="position-relative text-white">
+												<img class="w-100" src="img/articles/article2.jpg" alt="image">
+												<div class="card-img-overlay pt-2 pl-3">
+													<span class="px-2 pb-1 bg-red text-small text-uppercase">тематика</span>
+													<h5 class="pos-bottom pl-3 pb-3 mb-0 img-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, illum</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- таблоid -->
+			<div class="row mb-5">
+				
+				<div class="col-12">
+					<div class="border-top-red mb-2"></div>
+					<div>
+						<h5><a class="text-uppercase" href="#">таблоid</a></h5>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm col-lg-3">
+					<img class="w-100 mb-1" src="img/tabloid/tabloid3.jpg" alt="">
+					<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, dolor, sed.</p>
+				</div>
+				<div class="col-6 col-sm">
+					<img class="w-100 mb-1" src="img/tabloid/tabloid2.jpg" alt="">
+					<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, repellendus, tenetur?</p>
+				</div>
+				<div class="col-6 col-sm col-lg-3">
+					<img class="w-100 mb-1" src="img/tabloid/tabloid3.jpg" alt="">
+					<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque, obcaecati.</p>
+				</div>
+				<div class="col-6 col-sm">
+					<img class="w-100 mb-1" src="img/tabloid/tabloid1.jpg" alt="">
+					<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ullam voluptate.</p>
+				</div>
+				<div class="col d-none d-lg-block">
+					<img class="w-100 mb-1" src="img/tabloid/tabloid3.jpg" alt="">
+					<p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, autem, labore.</p>
+				</div>
+			</div>
+			<!-- економика, жизнь, европа та мир, история, спецпроекти -->
+			<div class="row pb-5">
+				
+				<div class="col-12 col-lg mb-4">
+					<ul class="list-group list-group-flush border-top-red">
+						<li class="list-group-item px-0 py-2">
+							<h5 class="m-0">
+								<a class="text-uppercase text-red" href="">zagolovok</a>
+							</h5>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur.</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-12 col-lg mb-4">
+					<ul class="list-group list-group-flush border-top-red">
+						<li class="list-group-item px-0 py-2">
+							<h5 class="m-0">
+								<a class="text-uppercase text-red" href="">zagolovok</a>
+							</h5>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, numquam!</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit.</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-12 col-lg mb-4">
+					<ul class="list-group list-group-flush border-top-red">
+						<li class="list-group-item px-0 py-2">
+							<h5 class="m-0">
+								<a class="text-uppercase text-red" href="">zagolovok</a>
+							</h5>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0 font-weight-bold">Lorem sum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur Voluptates, numquam!</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, Velit.</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-12 col-lg mb-4">
+					<ul class="list-group list-group-flush border-top-red">
+						<li class="list-group-item px-0 py-2">
+							<h5 class="m-0">
+								<a class="text-uppercase text-red" href="">zagolovok</a>
+							</h5>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor simet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, numquam!</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit.</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-12 col-lg mb-4">
+					<ul class="list-group list-group-flush border-top-red">
+						<li class="list-group-item px-0 py-2">
+							<h5 class="m-0">
+								<a class="text-uppercase text-red" href="">zagolovok</a>
+							</h5>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur sicing.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, numquam!</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit.</p>
+							</a>
+						</li>
+						<li class="list-group-item px-0 py-2">
+							<a href="#">
+								<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit.</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+		
+	</section>
+
+
+	<footer class="pt-5 bg-dark text-white text-small">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>© 2019 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores unde tenetur blanditiis doloremque eos molestias.</p>
+
+					<a class="float-left pr-2" href="#">
+						<img src="img/footer/footer-logo.png" alt="">
+					</a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates beatae assumenda debitis quisquam omnis, natus sequi tempore voluptatibus, eligendi, quod rem mollitia quibusdam cupiditate culpa ducimus recusandae dolorum ex dignissimos.</p>
+					<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+					<div class="border-bottom mb-5"></div>
+				</div>
+
+				<div class="col-12 col-md-6 col-lg-4 mb-5">
+					<img class="float-left mr-2" src="img/footer/don-kihot.jpg" alt="">
+					<div class="contacts overflow-hidden">
+						<p class="mb-2">Lorem ipsum: Dolor sit amet</p>
+						<p class="mb-2">Dolor impu: <a class="text-muted" href="#">Lorem ipsum dolor.</a></p>
+						<p class="mb-2">Lorem ipsum: <a class="text-muted" href="#">Corben Dallas</a></p>
+						<p class="mb-2">Email lorem: <a class="text-muted" href="#">petro@gmail.ua</a></p>
+						<p class="mb-2">Webmaster: <a class="text-muted" href="#">pphsx@ljsdlkfj.com.zk</a></p>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-6 col-lg-4 mb-5">
+					<ul class="list-unstyled">
+						<li class="pb-2"><a class="text-uppercase text-white" href="#">Lorem ipsum </a></li>
+						<li class="pb-2"><a class="text-uppercase text-white" href="#">Lorem ipsum dolor sit</a></li>
+						<li class="pb-2"><a class="text-uppercase text-white" href="#">Lorem ipsum dolor sit amet consectetur adip </a></li>
+						<li class="pb-2"><a class="text-uppercase text-white" href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></li>
+						<li class="pb-2"><a class="text-uppercase text-white" href="#">Lorem ipsu?</a></li>
+					</ul>
+				</div>
+
+				<div class="col col-lg-4">
+					<a class="px-3 py-2 border rounded-0 mr-4 mb-4 text-white" href="">FB <span class="ml-3">384k</span></a>
+					<a class="px-3 py-2 border rounded-0 mr-4 mb-4 text-white" href="">TW <span class="ml-3">384k</span></a>
+					<a class="px-3 py-2 border rounded-0 mb-4 text-white" href="">Wi-Fi</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

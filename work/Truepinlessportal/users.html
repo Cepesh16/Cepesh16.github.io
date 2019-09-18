@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="./assets/dist/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/dist/fontawesome-free-5.9.0-web/css/all.css">
+
+	
+	<title>Users</title>
+
+</head>
+<body>
+	
+	<header class="bg-light fixed-top border-bottom">
+		<div class="bg-info border-bottom">
+			<div class="container d-flex py-1 bg-info text-light">
+		  	<div class="align-self-center">
+		  		<span>Hello, 
+		  			<span class="font-weight-bold">Vasya Pupkin</span> | Credit limit: 
+		  			<span class="font-weight-bold">100$</span>, Balance due: 
+		  			<span class="font-weight-bold">$ 5.60</span>, Availalble Balance: 
+		  			<span class="font-weight-bold">$194.40</span>
+		  		</span>
+		  	</div>
+
+	  		<button class="btn btn-info border ml-auto"><i class="fas fa-power-off fa-lg pr-2"></i>Logout</button>
+			</div>
+		</div>
+
+		<nav class="container navbar navbar-expand-sm navbar-light bg-light">
+		  <ul class="navbar-nav">
+		    <li class="nav-item px-3">
+		      <a class="nav-link" href="./wireless-topup.html">Home</a>
+		    </li>
+		    <li class="nav-item px-3 active">
+		      <a class="nav-link" href="./users.html">Users</a>
+		    </li>
+		    <li class="nav-item px-3 dropdown">
+		      <a class="nav-link dropdown-toggle" href="./reports.html" id="navbardrop" data-toggle="dropdown">
+		      	Report
+		    	</a>
+			    <div class="dropdown-menu mt-0">
+			    	<a class="dropdown-item border-bottom" href="./report-sub1.html">Report 1</a>
+			    	<a class="dropdown-item" href="./report-sub2.html">Report 2</a>
+			    </div>
+
+		    </li>
+		  </ul>
+		  <form class="inline ml-auto">
+		  	<button class="btn btn-light border pt-0" type="button">
+		  		<div class="float-left"><i class="fas fa-phone-alt fa-lg mr-2 mt-4"></i></div>
+			  	<div class="float-left">
+			  		<span class="text-uppercase small">customer support</span><br>
+			  		<span>1-888-411-3440</span>
+			  	</div>
+		  	</button>
+		  </form>
+
+		</nav>
+	</header>
+
+	<main class="container h-100">
+		<div class="row h-100 justify-content-center">
+
+			<div class="col">
+				<div class="card">
+
+					<div class="card-header text-center">
+						<h4>My Store Agents</h4>
+					</div>
+
+					<div class="card-body">
+						<form class="row mb-3">
+							<div class="col-auto">
+									<label>Login Name</label>
+								<div class="form-group">
+									<input id="input__Login" class="form-control" type="text" value="">
+								</div>
+								
+							</div>
+							<div class="col-auto">
+									<label>Password</label>
+								<div class="form-group">
+									<input id="input__Password" class="form-control" type="password" value="">
+								</div>
+							</div>
+							<div class="col-auto ml-auto">
+								<label for="chb__Bal">Bal</label>
+								<input id="chb__Bal" type="checkbox" name="">
+								<label for="chb__Report">Report</label>
+								<input id="chb__Report" type="checkbox" name="">
+
+								<div class="form-group">
+									<button id="btn__AddEmployee" class="btn btn-primary" type="button">Add Employee</button>
+								</div>
+							</div>
+						</form>
+						
+						<table id="table__Employee" class="table table-bordered table-striped text-center">
+							<thead class="thead-light">
+								<tr>
+									<th>EMPLOYEE LOGIN</th>
+									<th>PASSWORD</th>
+									<th>BAL</th>
+									<th>REPORTS</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<input class="input__name form-control d-inline input-width bg-transparent border-none" type="text" data-saved="yes" value="Agent1" disabled>
+									</td>
+									<td>
+										<input class="input__password form-control d-inline input-width bg-transparent border-none" type="password" value="password1" disabled>
+									</td>
+									<td>
+										<input class="input__chbBal" type="checkbox" checked disabled>
+									</td>
+									<td>
+										<input class="input__chbReport" type="checkbox" disabled>
+									</td>
+									<td>
+										<div class="btn__panelEdit btn-group">
+											<button class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+											<button class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash"></i></button>
+
+										</div>
+										<div class="btn__panelChange btn-group d-none">
+											<button class="btn__saveChanges mr-2"><i class="fas fa-save"></i></button>
+											<button class="btn__cancelEdit"><i class="fas fa-window-close"></i></button>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<input class="input__name form-control d-inline input-width bg-transparent border-none" type="text" data-saved="yes" value="Agent2" disabled>
+									</td>
+									<td>
+										<input class="input__password form-control d-inline input-width bg-transparent border-none" type="password" value="password2" disabled>
+									</td>
+									<td>
+										<input class="input__chbBal" type="checkbox" checked disabled>
+									</td>
+									<td>
+										<input class="input__chbReport" type="checkbox" disabled>
+									</td>
+									<td>
+										<div class="btn__panelEdit btn-group">
+											<button class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+											<button class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash"></i></button>
+
+										</div>
+										<div class="btn__panelChange btn-group d-none">
+											<button class="btn__saveChanges mr-2"><i class="fas fa-save"></i></button>
+											<button class="btn__cancelEdit"><i class="fas fa-window-close"></i></button>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<input class="input__name form-control d-inline input-width bg-transparent border-none" type="text" data-saved="yes" value="Agent3" disabled>
+									</td>
+									<td>
+										<input class="input__password form-control d-inline input-width bg-transparent border-none" type="password" value="password3" disabled>
+									</td>
+									<td>
+										<input class="input__chbBal" type="checkbox" checked disabled>
+									</td>
+									<td>
+										<input class="input__chbReport" type="checkbox" disabled>
+									</td>
+									<td>
+										<div class="btn__panelEdit btn-group">
+											<button class="btn__editName mr-2"><i class="fas fa-edit"></i></button>
+											<button class="btn__deleteRow" data-toggle="modal" data-target="#deleteRowModal"><i class="fas fa-trash"></i></button>
+
+										</div>
+										<div class="btn__panelChange btn-group d-none">
+											<button class="btn__saveChanges mr-2"><i class="fas fa-save"></i></button>
+											<button class="btn__cancelEdit"><i class="fas fa-window-close"></i></button>
+										</div>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+
+						<!-- модальное окно delete row -->
+						<div class="modal fade" id="deleteRowModal" tabindex="-1" role="dialog" aria-labelledby="deleteRowModal" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title text-uppercase font-weight-bold">Delete row</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        <p>Do you want to delete this row?</p>
+						      </div>
+						      <div class="modal-footer">
+						        <button id="btnModalYesDelete" type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+						        <button id="btnModalCancelDelete" type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+					</div>	
+				</div>
+				
+ <!-- card -->
+			</div> <!-- col -->
+
+		</div> <!-- row -->
+
+
+	</main>
+	
+	<footer class="footer bg-light border-top">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col mx-auto text-center">
+					<p class="my-2">© 2019</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="assets/dist/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+	<script src="assets/dist/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</body>
+</html>

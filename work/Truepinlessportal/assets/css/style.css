@@ -1,0 +1,111 @@
+html, body {
+	/*position: relative;*/
+  min-height: 100%;
+}
+body {
+	margin-top: 190px;
+	/*margin-bottom: 60px;*/
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  margin-top: 150px;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+/*.input-group .form-control.phone-width {
+	width: 40px;
+}*/
+
+/*.form-control:focus,
+.input-group:focus { 
+    outline: none; 
+    box-shadow:none;
+}*/
+/* .navbar ul li {
+	background: #eeeeee;
+}
+.navbar ul li a {
+	color: #222222;
+}
+
+.navbar ul li:hover,
+.dropdown-menu {
+	background: #31373e;
+}
+
+.dropwdonw-menu a {
+	color: #222222;
+}
+
+.navbar ul li:hover a {
+	color: #f0f0f0;
+} */
+
+
+
+.border-none {
+	border: none;
+}
+
+.input-width {
+	max-width: 180px;
+
+}
+
+
+
+/*DATATABLES CSS*/
+ .dataTables_wrapper .dataTables_paginate {
+	padding-top: 0;
+}
+
+.paginate_input {
+	width: 40px;
+	height:  calc(1.5em + .5rem + 2px);
+	padding-left: 4px;
+	border-radius: 5px;
+	border: 1px solid #ced4da;
+	outline: none;
+
+}
+.paginate_input:focus {
+    box-shadow: 0 0 0px 3px #abceff;
+}
+div.dataTables_wrapper div.dataTables_filter input  {
+	width: 150px;
+}
+
+div.dt-button-collection {
+	padding: 10px;
+	text-align: center;
+}
+
+
+
+
+/* Pagination for table
+.page-item {
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+.page-item:hover {
+	background: #444;
+	color: #eee;
+	cursor: pointer;
+}  */
+
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, 
+table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, 
+table.dataTable thead .sorting_desc_disabled:after,
+
+table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, 
+table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, 
+table.dataTable thead .sorting_desc_disabled:before {
+	content: '';
+	}
+
+
+

@@ -1,0 +1,160 @@
+html {
+	/*font-size: 13px;*/
+}
+html, body {
+}
+
+body {
+	margin-top: 55px;
+	background: #f7f7f7;;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*overflow-y: scroll;*/
+}
+
+h5 {
+	font-size: 14px;
+}
+
+header {
+	background: #0f5092;
+}
+
+.bg-header {
+	background: #0f5092;
+}
+
+.btn {
+	border-radius: 0;
+}
+.btn-logout {
+	color: #fff;
+}
+.btn-logout:hover {
+	background: #47a3da;
+}
+.btn-logout .fa-power-off,
+ {
+	font-size: 1.3em;
+}
+
+
+.panel {
+	/*height: 220px;*/
+	background: #fff;
+	border-top: 5px solid #34495e;
+	border-radius: 3px 3px 0 0;
+}
+.panel ul.list-group li {
+	font-size: 0.8rem;
+}
+/* .panel ul.list-group li.list-group-item {
+} */
+
+
+.panel-header {
+	/*height: 30px;*/
+}
+.panel-icon {
+	width: 48px;
+	height: 48px;
+	background: #F39C12;
+	top: -38px;
+	left: 42%;
+}
+
+.panel-icon .fas {
+	display: table-cell;
+	color: #fff;
+	vertical-align: middle;
+	height: 48px;
+	width: 48px;
+
+}
+
+
+.panel-body {
+	/*padding: 0.6rem;*/
+	height: 150px;
+}
+.panel-body p {
+/* display: table-cell;
+	vertical-align: middle;
+	text-align: center; */
+	width: 270px;
+	/*height: 95px;*/
+	font-size: 16px;
+}
+
+.panel-footer {
+	width: 100px;
+}
+.panel-footer a {
+	width: 100%;
+	background: #e6e6e6;
+}
+
+.btn-view {
+	height: 3rem;
+}
+
+
+
+/*MANAGE-STORE CSS*/
+table, form, legend {
+	font-size: 0.8rem;
+}
+table th {
+	font-size: 1rem;
+}
+
+
+/*INSERT-STORE CSS*/
+.border-top-3 {
+	border-top: 5px solid #34495e;
+}
+
+
+/*STORE-PAYMENT CSS*/
+.panel-header-height {
+	/*height: 40px;*/
+}
+
+.panel-min-height {
+	min-height: 160px;
+}
+
+.panel-d-none {
+	display: none;
+}
+
+/*MANAGE-DISCOUNT-PLAN CSS*/
+.table .fas {
+	font-size: 1rem;
+}
+
+
+/*EMPLOYEE-MANAGEMENT CSS*/
+.bg-none {
+	background: none;
+}
+
+/*DATATABLES CSS*/
+.dataTables_wrapper .dataTables_paginate {
+	padding-top: 0;
+}
+
+.paginate_input {
+	width: 40px;
+	height:  calc(1.5em + .5rem + 2px);
+	border-radius: 5px;
+	border: 1px solid #ced4da;
+	outline: none;
+
+}
+.paginate_input:focus {
+    box-shadow: 0 0 0px 3px #abceff;
+}
+div.dataTables_wrapper div.dataTables_filter input  {
+	width: 100px;
+}
+
