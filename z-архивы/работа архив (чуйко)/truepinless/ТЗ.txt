@@ -1,9 +1,0 @@
-http://truepinlessportal.com/distributor/
-
-
-страница MANAGE STORE
-использовать таблицы: https://datatables.net/
-
-в конце таблицы ссылки
-среднюю, т.е. Edit Credit Cards - не рисуешь, она не нужна
-

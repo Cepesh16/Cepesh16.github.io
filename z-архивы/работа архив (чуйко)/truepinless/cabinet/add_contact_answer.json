@@ -1,5 +1,0 @@
-{
-  "error": 0,
-  "html": "<div class=\"panel panel-default sub-panel\"> <div class=\"panel-heading\"> <h3 class=\"panel-title\">Billing Contact</h3> <div class=\"contact-control\"> <i class=\"glyphicon glyphicon-pencil edit-item\" data-form-url=\"form_load.json\" data-item-class=\".sub-panel\" data-tooltip=\"tooltip\" data-placement=\"top\" title=\"Edit Contact\"></i> <i class=\"glyphicon glyphicon-remove del-item\" data-parent=\".sub-panel\" data-url=\"del_item_answer.json?id=1\" data-tooltip=\"tooltip\" data-placement=\"top\" title=\"Delete Contact\"></i> </div></div><div class=\"panel-body\"> <div class=\"contact-item\"> <h4>John Doe</h4> <p class=\"phone\">+1 (732) 555-55-55</p><p>any@email.com, another@email.com</p></div></div></div>",
-  "message": "Item successfully added"
-}
