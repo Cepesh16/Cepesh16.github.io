@@ -13,6 +13,12 @@ body {
   color: snow;
   text-shadow: 3px 3px #666;
 }
+h1 {
+  font-size: 3.3rem;
+}
+h2 {
+  font-size: 3rem;
+}
 /*h1 {
   font-family: 'Work Sans', sans-serif;
   font-size: 350%;
