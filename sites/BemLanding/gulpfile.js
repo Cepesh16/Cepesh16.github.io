@@ -21,7 +21,7 @@ const
 		'./src/js/**/*.js'
 	];
 // только main.scss куда импортируются все остальные .scss файлы
-const scssFiles = './src/sass/main.scss';
+const scssFiles = './src/scss/main.scss';
 
 function sassCompile () {
 	// указываем откуда берем файлы
@@ -70,7 +70,7 @@ function scripts() {
 
 // удаляем файлы в папке build
 function clean() {
-	return del( [ 'build/*']);
+	return del( [ 'build/css/*', 'build/js/*' ] );
 };
 
 function watch() {
